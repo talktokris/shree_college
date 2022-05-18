@@ -37,7 +37,20 @@ Route::get('/inquiry', [App\Http\Controllers\InquiryPageController::class, 'inqu
 Route::get('/contact', [App\Http\Controllers\ContactPageController::class, 'contact'])->name('contact');
 
 
+/* Admin Routes  */
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/contact', [App\Http\Controllers\ContactPageController::class, 'contact'])->name('contact');
+
+Route::get('/admin/home', [App\Http\Controllers\AdminHomeController::class, 'index'])->name('admin-home');
+
+Route::get('/admin/create-news-post', [App\Http\Controllers\AdminNewsController::class, 'createNewsPost'])->name('create-new-post');
+Route::get('/admin/search-news-posts', [App\Http\Controllers\AdminNewsController::class, 'searchNewsPosts'])->name('search-news-post');
+Route::get('/admin/upload-images', [App\Http\Controllers\AdminGalleryController::class, 'uploadImages'])->name('upload-images');
+Route::get('/admin/manage-gallery-images', [App\Http\Controllers\AdminGalleryController::class, 'manageGalleryImages'])->name('manage-galley-images');
+Route::get('/admin/manage-gallery-categories', [App\Http\Controllers\AdminGalleryController::class, 'manageGalleryCategories'])->name('manage-galley-categories');
+Route::get('/admin/create-team-member', [App\Http\Controllers\AdminTeamController::class, 'createTeamMember'])->name('create-team-member');
+Route::get('/admin/manage-team-members', [App\Http\Controllers\AdminTeamController::class, 'manageTeamMembers'])->name('manage-team-members');
+Route::get('/admin/create-contact', [App\Http\Controllers\AdminContactController::class, 'createContact'])->name('create-contact');
+Route::get('/admin/manage-contacts', [App\Http\Controllers\AdminContactController::class, 'manageContacts'])->name('manage-contact');
 
 

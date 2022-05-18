@@ -12,7 +12,7 @@ class ContactPageController extends Controller
     public function contact(){
 
         return view("public.contactPage");
-    
-    
+
+
     }
 }

@@ -8,10 +8,26 @@ class AdminGalleryController extends Controller
 {
     //
 
-    use HasFactory;
-    
-    protected $fillable = [
-        'image_name',
-        
-    ];
+    public function uploadImages(){
+
+        return view("admin.galleryImageUpload");
+
+
+
+    }
+
+    public function manageGalleryImages(){
+
+        return view("admin.galleryManageImages");
+
+
+
+    }
+
+    public function manageGalleryCategories(){
+
+        return view("admin.galleryCategoriesManage");
+
+
+    }
 }
