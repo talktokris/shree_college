@@ -11,18 +11,31 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
+*/
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
+
+/*
 
 Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 */
 
-Auth::routes();
+//Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomePageController::class, 'index'])->name('landing');
 Route::get('/about-shree', [App\Http\Controllers\AboutPageController::class, 'aboutShree'])->name('about-shree');
@@ -36,14 +49,22 @@ Route::get('/faq', [App\Http\Controllers\FaqPageController::class, 'faq'])->name
 Route::get('/inquiry', [App\Http\Controllers\InquiryPageController::class, 'inquiry'])->name('inquiry');
 Route::get('/contact', [App\Http\Controllers\ContactPageController::class, 'contact'])->name('contact');
 
+//Route::get('/contact', [App\Http\Controllers\ContactPageController::class, 'contact'])->name('contact');
+  //  Route::get('/logout', [App\Http\Controllers\Admin\AuthenticatedSessionController::class, 'destroy'])->name('admin-logout');
+
+
 
 /* Admin Routes  */
 
-Route::get('/contact', [App\Http\Controllers\ContactPageController::class, 'contact'])->name('contact');
 
-Route::get('/admin/home', [App\Http\Controllers\AdminHomeController::class, 'index'])->name('admin-home');
 
-Route::get('/admin/create-news-post', [App\Http\Controllers\AdminNewsController::class, 'createNewsPost'])->name('create-new-post');
+
+
+
+
+//Route::get('/admin/home', [App\Http\Controllers\AdminHomeController::class, 'index'])->name('admin-home');
+
+Route::get('/admins/create-news-post', [App\Http\Controllers\AdminNewsController::class, 'createNewsPost'])->name('create-new-post');
 Route::get('/admin/search-news-posts', [App\Http\Controllers\AdminNewsController::class, 'searchNewsPosts'])->name('search-news-post');
 Route::get('/admin/upload-images', [App\Http\Controllers\AdminGalleryController::class, 'uploadImages'])->name('upload-images');
 Route::get('/admin/manage-gallery-images', [App\Http\Controllers\AdminGalleryController::class, 'manageGalleryImages'])->name('manage-galley-images');
@@ -52,5 +73,3 @@ Route::get('/admin/create-team-member', [App\Http\Controllers\AdminTeamControlle
 Route::get('/admin/manage-team-members', [App\Http\Controllers\AdminTeamController::class, 'manageTeamMembers'])->name('manage-team-members');
 Route::get('/admin/create-contact', [App\Http\Controllers\AdminContactController::class, 'createContact'])->name('create-contact');
 Route::get('/admin/manage-contacts', [App\Http\Controllers\AdminContactController::class, 'manageContacts'])->name('manage-contact');
-
-

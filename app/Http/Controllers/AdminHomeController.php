@@ -10,10 +10,30 @@ class AdminHomeController extends Controller
 
     public function index(){
 
-        return view("home");
+        return view("admin.dashboard");
 
 
     }
+
+
+
+    public function register(){
+
+        return view("register");
+
+
+    }
+
+
+    public function login(){
+
+        return view("login");
+
+
+    }
+
+
+
 
 
 }
