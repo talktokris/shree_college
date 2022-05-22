@@ -13,6 +13,7 @@
     <link href="{{ asset('bk/plugins/highcharts/css/highcharts.css') }}" rel="stylesheet" />
     <link href="{{ asset('bk/plugins/vectormap/jquery-jvectormap-2.0.2.css') }}" rel="stylesheet" />
     <link href="{{ asset('bk/plugins/metismenu/css/metisMenu.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('bk/plugins/datatable/css/dataTables.bootstrap5.min.css') }}" rel="stylesheet" />
     <!-- loader-->
     <link href="{{ asset('bk/css/pace.min.css') }}" rel="stylesheet" />
     <script src="{{ asset('bk/js/pace.min.js') }}"></script>
@@ -24,7 +25,10 @@
     <link rel="stylesheet" href="{{ asset('bk/css/dark-theme.css') }}" />
     <link rel="stylesheet" href="{{ asset('bk/css/semi-dark.css') }}" />
     <link rel="stylesheet" href="{{ asset('bk/css/header-colors.css') }}" />
+    <link rel="stylesheet" href="{{ asset('bk/css/custom.css') }}" />
     <title>Shree College of Management - ACCA and CIMA</title>
+
+
 </head>
 
 <body>
@@ -86,6 +90,9 @@
     <script src="{{ asset('bk/plugins/highcharts/js/export-data.js') }}"></script>
     <script src="{{ asset('bk/plugins/highcharts/js/accessibility.js') }}"></script>
     <script src="{{ asset('bk/plugins/apexcharts-bundle/js/apexcharts.min.js') }}"></script>
+
+    <script src="{{ asset('bk/plugins/datatable/js/jquery.dataTables.min.js') }}"></script>
+	<script src="{{ asset('bk/plugins/datatable/js/dataTables.bootstrap5.min.js') }}"></script>
     <script src="{{ asset('bk/js/index.js') }}"></script>
     <!--app JS-->
     <script src="{{ asset('bk/js/app.js') }}"></script>
@@ -94,6 +101,23 @@
         new PerfectScrollbar('.store-metrics');
         new PerfectScrollbar('.product-list');
     </script>
+
+<script>
+    $(document).ready(function() {
+        $('#example').DataTable();
+      } );
+</script>
+<script>
+    $(document).ready(function() {
+        var table = $('#example2').DataTable( {
+            lengthChange: false,
+            buttons: [ 'copy', 'excel', 'pdf', 'print']
+        } );
+
+        table.buttons().container()
+            .appendTo( '#example2_wrapper .col-md-6:eq(0)' );
+    } );
+</script>
 </body>
 
 </html>

@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class AdminHomeController extends Controller
@@ -10,7 +11,7 @@ class AdminHomeController extends Controller
 
     public function index(){
 
-        return view("admin.dashboard");
+        return view("admin.adminDashboard");
 
 
     }
@@ -31,9 +32,5 @@ class AdminHomeController extends Controller
 
 
     }
-
-
-
-
 
 }

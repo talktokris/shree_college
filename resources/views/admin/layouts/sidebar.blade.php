@@ -12,7 +12,7 @@
 <ul class="metismenu" id="menu">
 
 <li>
-        <a href="{{ url('/admin/home') }}" >
+        <a href="{{ url('/admin/dashboard') }}" >
             <div class="parent-icon"><i class='bx bx-home-circle'></i>
             </div>
             <div class="menu-title">Dashboard</div>
@@ -80,10 +80,11 @@
     </li>
 
     <li>
-        <a href="{{ url('/admin/home') }}" >
+        <a href="#" onclick="document.getElementById('log-form').submit(); return false; ">
             <div class="parent-icon"><i class="bx bx-log-out"></i>
             </div>
-            <div class="menu-title">Logout</div>
+
+            <div class="menu-title" >Logout</div>
         </a>
     </li>
 

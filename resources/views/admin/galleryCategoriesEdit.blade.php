@@ -57,7 +57,11 @@
                     <!---- allert message End -->
 							<div class="card-body">
 								<div class="p-4 border rounded">
-                                        <form class="row g-3 needs-validation" method="post" action="{{ url('/admin/create-gallery-category') }}" >
+
+                                    @foreach ($galleryCatDataSingle as $itemSingle)
+
+
+                                        <form class="row g-3 needs-validation" method="post" action="{{ url('/admin/gallery-category/edit') }}/<?php echo base64_encode($itemSingle->id);?>" >
                                             @csrf
 
                                     <div class="col-md-3">
@@ -66,7 +70,7 @@
 										</div>
 										<div class="col-md-6">
 
-                                            <input type="text" name="catagory_name" class="form-control @error('catagory_name') is-invalid @enderror" id="validationCustom03" value="{{ old('catagory_name') }}" required="">
+                                            <input type="text" name="catagory_name" class="form-control @error('catagory_name') is-invalid @enderror" id="validationCustom03" value="{{ old('catagory_name') ?? $itemSingle->catagory_name  }}" required="">
 
                                             @error('catagory_name')
                                             <div class="invalid-feedback">
@@ -82,6 +86,7 @@
 
 
 									</form>
+                                    @endforeach
 								</div>
 							</div>
 						</div>

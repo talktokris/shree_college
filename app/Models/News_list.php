@@ -15,6 +15,7 @@ class News_list extends Model
         'news_title',
         'news_content',
         'status',
-        
+        'posted_user_email',
+
     ];
 }

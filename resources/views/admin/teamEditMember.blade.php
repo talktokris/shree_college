@@ -21,9 +21,11 @@
 				<!--end breadcrumb-->
 				<div class="row">
 					<div class="col-xl-9 mx-auto">
-						<h6 class="mb-0 text-uppercase">Create New Team Member</h6>
+						<h6 class="mb-0 text-uppercase">Edit New Team Member</h6>
 						<hr/>
 						<div class="card">
+
+
 
                                     <!---- allert message Start -->
                                     @if(Session::has('flash_message_success'))
@@ -53,14 +55,22 @@
                                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                     </div>
                                     @endif
+
+
                                     <!---- allert message End -->
 							<div class="card-body">
 								<div class="p-4 border rounded">
-									<form class="row g-3 needs-validation" method="post" action="{{ url('/admin/create-team-member') }}" >
+
+
+
+                                    @foreach ($teamMemberDataSingle as $itemSingle)
+
+
+									<form class="row g-3 needs-validation" method="post" action="{{ url('admin/team-member/edit') }}/<?php echo base64_encode($itemSingle->id);?>" >
                                         @csrf
 										<div class="col-md-6">
 											<label for="validationCustom01" class="form-label">Name</label>
-                                            <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="validationCustom03" value="{{ old('name') }}" required="">
+                                            <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="validationCustom03" value="{{ old('name') ?? $itemSingle->name }}" required="">
 
                                             @error('name')
                                             <div class="invalid-feedback">
@@ -68,12 +78,13 @@
                                             </div>
                                              @enderror
 										</div>
+
 										<div class="col-md-6">
 											<label for="validationCustom02" class="form-label">Team Type</label>
                                             <select name="job_scope" class="form-select" id="validationCustom04" required="">
                                                 <?php if(old('job_scope')){
                                                     ?>
-                                                     <option value="<?php echo old('job_scope') ?>"><?php echo old('job_scope') ?></option>
+                                                     <option value="{{ old('job_scope') ?? $itemSingle->job_scope }}">{{ old('job_scope') ?? $itemSingle->job_scope }}</option>
                                                     <?php  }  ?>
                                             <option value="Management">Management</option>
 												<option value="Lecturer">Lecturer</option>
@@ -89,7 +100,7 @@
 
                                         <div class="col-md-6">
 											<label for="validationCustom02" class="form-label">Job Title</label>
-                                            <input type="text" name="post" class="form-control @error('post') is-invalid @enderror" id="validationCustom03" value="{{ old('post') }}" required="">
+                                            <input type="text" name="post" class="form-control @error('post') is-invalid @enderror" id="validationCustom03" value="{{ old('post') ?? $itemSingle->post }}" required="">
 
                                             @error('post')
                                             <div class="invalid-feedback">
@@ -100,7 +111,7 @@
 
                                         <div class="col-md-6">
 											<label for="validationCustom02" class="form-label">Email Address</label>
-                                            <input type="text" name="email" class="form-control @error('email') is-invalid @enderror" id="validationCustom03" value="{{ old('email') }}" required="">
+                                            <input type="text" name="email" class="form-control @error('email') is-invalid @enderror" id="validationCustom03" value="{{ old('email') ?? $itemSingle->email }}" required="">
 
                                             @error('email')
                                             <div class="invalid-feedback">
@@ -111,7 +122,7 @@
 										<div class="col-md-6">
 											<label for="validationCustomUsername" class="form-label">Facebok profile URL</label>
 											<div class="input-group has-validation"> <span class="input-group-text" id="inputGroupPrepend">Facebook</span>
-                                                <input type="text" name="facebook_link" class="form-control @error('facebook_link') is-invalid @enderror" id="validationCustom03" value="{{ old('facebook_link') }}" >
+                                                <input type="text" name="facebook_link" class="form-control @error('facebook_link') is-invalid @enderror" id="validationCustom03" value="{{ old('facebook_link') ?? $itemSingle->facebook_link }}" >
 
                                                 @error('facebook_link')
                                                 <div class="invalid-feedback">
@@ -123,7 +134,7 @@
                                         <div class="col-md-6">
 											<label for="validationCustomUsername" class="form-label">Twitter profile URL</label>
 											<div class="input-group has-validation"> <span class="input-group-text" id="inputGroupPrepend">Twitter</span>
-                                                <input type="text" name="twitter_link" class="form-control @error('twitter_link') is-invalid @enderror" id="validationCustom03" value="{{ old('twitter_link') }}">
+                                                <input type="text" name="twitter_link" class="form-control @error('twitter_link') is-invalid @enderror" id="validationCustom03" value="{{ old('twitter_link') ?? $itemSingle->twitter_link }}">
 
                                                 @error('twitter_link')
                                                 <div class="invalid-feedback">
@@ -136,13 +147,15 @@
                                         <div class="col-md-6">
 											<label for="validationCustom02" class="form-label">Show Status</label>
                                             <select name="status" class="form-select" id="validationCustom04" required="">
-                                                <?php if(old('status')){
-                                                    if(old('status')==0){ $status_string='Pending';}
-                                                    elseif(old('status')==1){ $status_string='Active';}
-                                                    else { $status_string='';}
-                                                    ?>
-                                                     <option value="<?php echo old('status') ?>"><?php echo $status_string ?></option>
-                                                    <?php  }  ?>
+                                                <?php
+                                                if($itemSingle->status==0){ $status_string='Pending'; $statusValue = $itemSingle->status;}
+                                                elseif($itemSingle->status==1){ $status_string='Active';  $statusValue = $itemSingle->status;}
+                                                elseif(old('status')==0){ $status_string='Pending'; $statusValue = old('status'); }
+                                                elseif(old('status')==1){ $status_string='Active'; $statusValue = old('status');}
+                                                else { $status_string=''; $statusValue = old('status');}
+                                                ?>
+                                                     <option value="<?php echo $statusValue ?>"><?php echo $status_string ?></option>
+
                                             <option value="0">Pending</option>
 												<option value="1">Active</option>
 
@@ -159,6 +172,9 @@
 											<button class="btn btn-primary" type="submit">Submit form</button>
 										</div>
 									</form>
+
+                                    @endforeach
+
 								</div>
 							</div>
 						</div>

@@ -56,11 +56,14 @@
                                     <!---- allert message End -->
 							<div class="card-body">
 								<div class="p-4 border rounded">
-									<form class="row g-3 needs-validation" method="post" action="{{ url('/admin/create-contact') }}" >
+                                    @foreach ($ContactDataSingle as $itemSingle)
+
+
+									<form class="row g-3 needs-validation" method="post" action="{{ url('/admin/contact/edit') }}/<?php echo base64_encode($itemSingle->id);?>" >
                                         @csrf
 										<div class="col-md-6">
 											<label for="validationCustom01" class="form-label">Organization Name</label>
-                                            <input type="text" name="organization_name" class="form-control @error('organization_name') is-invalid @enderror" id="validationCustom03" value="{{ old('organization_name') }}" required="">
+                                            <input type="text" name="organization_name" class="form-control @error('organization_name') is-invalid @enderror" id="validationCustom03" value="{{ old('organization_name') ?? $itemSingle->organization_name }}" required="">
 
                                             @error('organization_name')
                                             <div class="invalid-feedback">
@@ -72,7 +75,7 @@
 
                                         <div class="col-md-6">
 											<label for="validationCustom02" class="form-label">Address</label>
-                                            <input type="text" name="address" class="form-control @error('address') is-invalid @enderror" id="validationCustom03" value="{{ old('address') }}" required="">
+                                            <input type="text" name="address" class="form-control @error('address') is-invalid @enderror" id="validationCustom03" value="{{ old('address') ?? $itemSingle->address }}" required="">
 
                                             @error('address')
                                             <div class="invalid-feedback">
@@ -83,7 +86,7 @@
 
                                         <div class="col-md-12">
 											<label for="validationCustom02" class="form-label">Google Map Link</label>
-                                            <input type="text" name="google_map_link" class="form-control @error('google_map_link') is-invalid @enderror" id="validationCustom03" value="{{ old('google_map_link') }}" required="">
+                                            <input type="text" name="google_map_link" class="form-control @error('google_map_link') is-invalid @enderror" id="validationCustom03" value="{{ old('google_map_link') ?? $itemSingle->google_map_link }}" required="">
 
                                             @error('google_map_link')
                                             <div class="invalid-feedback">
@@ -94,7 +97,7 @@
 										<div class="col-md-6">
 											<label for="validationCustomUsername" class="form-label">Email</label>
 											<div class="input-group has-validation"> <span class="input-group-text" id="inputGroupPrepend"><i class="bx bx-envelope"></i></span>
-                                                <input type="text" name="email_one" class="form-control @error('email_one') is-invalid @enderror" id="validationCustom03" value="{{ old('email_one') }}" >
+                                                <input type="text" name="email_one" class="form-control @error('email_one') is-invalid @enderror" id="validationCustom03" value="{{ old('email_one') ?? $itemSingle->email_one }}" >
 
                                                 @error('email_one')
                                                 <div class="invalid-feedback">
@@ -106,7 +109,7 @@
                                         <div class="col-md-6">
 											<label for="validationCustomUsername" class="form-label">Email</label>
 											<div class="input-group has-validation"> <span class="input-group-text" id="inputGroupPrepend"><i class="bx bx-envelope"></i></span>
-                                                <input type="text" name="email_two" class="form-control @error('email_two') is-invalid @enderror" id="validationCustom03" value="{{ old('email_two') }}">
+                                                <input type="text" name="email_two" class="form-control @error('email_two') is-invalid @enderror" id="validationCustom03" value="{{ old('email_two') ?? $itemSingle->email_two }}">
 
                                                 @error('email_two')
                                                 <div class="invalid-feedback">
@@ -119,7 +122,7 @@
                                          <div class="col-md-6">
 											<label for="validationCustomUsername" class="form-label">Phone No</label>
 											<div class="input-group has-validation"> <span class="input-group-text" id="inputGroupPrepend"><i class="bx bx-phone"></i></span>
-                                                <input type="text" name="phone_one" class="form-control @error('phone_one') is-invalid @enderror" id="validationCustom03" value="{{ old('phone_one') }}">
+                                                <input type="text" name="phone_one" class="form-control @error('phone_one') is-invalid @enderror" id="validationCustom03" value="{{ old('phone_one') ?? $itemSingle->phone_one }}">
 
                                                 @error('phone_one')
                                                 <div class="invalid-feedback">
@@ -132,7 +135,7 @@
                                         <div class="col-md-6">
 											<label for="validationCustomUsername" class="form-label">Phone No</label>
 											<div class="input-group has-validation"> <span class="input-group-text" id="inputGroupPrepend"><i class="bx bx-phone"></i></span>
-                                                <input type="text" name="phone_two" class="form-control @error('phone_two') is-invalid @enderror" id="validationCustom03" value="{{ old('phone_two') }}">
+                                                <input type="text" name="phone_two" class="form-control @error('phone_two') is-invalid @enderror" id="validationCustom03" value="{{ old('phone_two') ?? $itemSingle->phone_two }}">
 
                                                 @error('phone_two')
                                                 <div class="invalid-feedback">
@@ -145,7 +148,7 @@
                                         <div class="col-md-6">
 											<label for="validationCustomUsername" class="form-label">Phone No</label>
 											<div class="input-group has-validation"> <span class="input-group-text" id="inputGroupPrepend"><i class="bx bx-phone"></i></span>
-                                                <input type="text" name="phone_three" class="form-control @error('phone_three') is-invalid @enderror" id="validationCustom03" value="{{ old('phone_three') }}">
+                                                <input type="text" name="phone_three" class="form-control @error('phone_three') is-invalid @enderror" id="validationCustom03" value="{{ old('phone_three') ?? $itemSingle->phone_three }}">
 
                                                 @error('phone_three')
                                                 <div class="invalid-feedback">
@@ -158,7 +161,7 @@
                                         <div class="col-md-6">
 											<label for="validationCustomUsername" class="form-label">Phone No</label>
 											<div class="input-group has-validation"> <span class="input-group-text" id="inputGroupPrepend"><i class="bx bx-phone"></i></span>
-                                                <input type="text" name="phone_four" class="form-control @error('phone_four') is-invalid @enderror" id="validationCustom03" value="{{ old('phone_four') }}">
+                                                <input type="text" name="phone_four" class="form-control @error('phone_four') is-invalid @enderror" id="validationCustom03" value="{{ old('phone_four') ?? $itemSingle->phone_four }}">
 
                                                 @error('phone_four')
                                                 <div class="invalid-feedback">
@@ -171,13 +174,15 @@
                                         <div class="col-md-6">
 											<label for="validationCustom02" class="form-label">Show Status</label>
                                             <select name="status" class="form-select" id="validationCustom04" required="">
-                                                <?php if(old('status')){
-                                                    if(old('status')==0){ $status_string='Pending';}
-                                                    elseif(old('status')==1){ $status_string='Active';}
-                                                    else { $status_string='';}
-                                                    ?>
-                                                     <option value="<?php echo old('status') ?>"><?php echo $status_string ?></option>
-                                                    <?php  }  ?>
+                                                <?php
+                                                if($itemSingle->status==0){ $status_string='Pending'; $statusValue = $itemSingle->status;}
+                                                elseif($itemSingle->status==1){ $status_string='Active';  $statusValue = $itemSingle->status;}
+                                                elseif(old('status')==0){ $status_string='Pending'; $statusValue = old('status'); }
+                                                elseif(old('status')==1){ $status_string='Active'; $statusValue = old('status');}
+                                                else { $status_string=''; $statusValue = old('status');}
+                                                ?>
+                                                     <option value="<?php echo $statusValue ?>"><?php echo $status_string ?></option>
+
                                             <option value="0">Pending</option>
 												<option value="1">Active</option>
 
@@ -194,6 +199,8 @@
 											<button class="btn btn-primary" type="submit">Submit form</button>
 										</div>
 									</form>
+
+                                    @endforeach
 								</div>
 							</div>
 						</div>

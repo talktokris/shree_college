@@ -44,8 +44,13 @@
                 data-bs-toggle="dropdown" aria-expanded="false">
                 <img src="https://via.placeholder.com/110x110" class="user-img" alt="user avatar">
                 <div class="user-info ps-3">
-                    <p class="user-name mb-0">Pauline Seitz</p>
-                    <p class="designattion mb-0">Web Designer</p>
+                    <p class="user-name mb-0">{{ Auth::User()->name }}</p>
+                    <?php if(Auth::User()->role==1){ $roleString ='Web User';}
+                    elseif(Auth::User()->role==2){ $roleString ='Staff User';}
+                    elseif(Auth::User()->role==3){ $roleString ='Admin User';}
+                    else{ $roleString ='Pending User';}
+                 ?>
+                    <p class="designattion mb-0">{{ $roleString }}</p>
                 </div>
             </a>
             <ul class="dropdown-menu dropdown-menu-end">
@@ -57,8 +62,15 @@
                 <li>
                     <div class="dropdown-divider mb-0"></div>
                 </li>
-                <li><a class="dropdown-item" href="javascript:;"><i
-                            class='bx bx-log-out-circle'></i><span>Logout</span></a>
+                <li><form method="POST" id="log-form" action="{{ route('logout') }}">
+                @csrf
+                    <button class="dropdown-item" type="submit" ><i
+                            class='bx bx-log-out-circle'></i><span>Logout</span></button>
+
+
+                                       <!-- Authentication -->
+
+                                         </form>
                 </li>
             </ul>
         </div>
