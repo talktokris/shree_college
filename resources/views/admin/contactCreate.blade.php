@@ -179,7 +179,7 @@
                                                      <option value="<?php echo old('status') ?>"><?php echo $status_string ?></option>
                                                     <?php  }  ?>
                                             <option value="0">Pending</option>
-												<option value="1">Active</option>
+											<option value="1">Active</option>
 
 
 											</select>

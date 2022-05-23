@@ -10,6 +10,8 @@ class Gallery_images_list extends Model
     use HasFactory;
 
     protected $fillable = [
-        'image_name',
+        'thumbnail_img',
+        'large_img',
+        'catagory_name',
     ];
 }

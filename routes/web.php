@@ -68,9 +68,12 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/admin/search-news-posts', [App\Http\Controllers\Admin\AdminNewsController::class, 'searchNewsPosts'])->name('search-news-post');
     Route::get('/admin/news/delete/{hash_id}', [App\Http\Controllers\Admin\AdminNewsController::class, 'deleteNewsPost'])->name('delete-news-post');
     Route::match(array('GET','POST'),'/admin/news/edit/{hash_id}', [App\Http\Controllers\Admin\AdminNewsController::class, 'editNewsPost'])->name('edit-new-post');
+    Route::match(array('GET','POST'),'/admin/news-image-upload/{hash_id}', [App\Http\Controllers\Admin\AdminNewsController::class, 'newsImageUpload'])->name('news-image-upload');
 
     Route::match(array('GET','POST'),'/admin/upload-images', [App\Http\Controllers\Admin\AdminGalleryController::class, 'uploadImages'])->name('upload-images');
-    Route::get('/admin/manage-gallery-images', [App\Http\Controllers\Admin\AdminGalleryController::class, 'manageGalleryImages'])->name('manage-galley-images');
+    Route::match(array('GET','POST'),'/admin/manage-gallery-images', [App\Http\Controllers\Admin\AdminGalleryController::class, 'manageGalleryImages'])->name('manage-galley-images');
+    Route::get('/admin/gallery-image/delete/{hash_id}', [App\Http\Controllers\Admin\AdminGalleryController::class, 'deleteGalleryImage'])->name('delete-galley-image');
+
     Route::match(array('GET','POST'),'/admin/manage-gallery-categories', [App\Http\Controllers\Admin\AdminGalleryController::class, 'manageGalleryCategories'])->name('manage-galley-categories');
     Route::post('/admin/create-gallery-category', [App\Http\Controllers\Admin\AdminGalleryController::class, 'createGalleryCategory'])->name('create-galley-category');
     Route::get('/admin/gallery-category/delete/{hash_id}', [App\Http\Controllers\Admin\AdminGalleryController::class, 'deleteGalleryCategory'])->name('create-galley-category');
@@ -80,6 +83,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/admin/manage-team-members', [App\Http\Controllers\Admin\AdminTeamController::class, 'manageTeamMembers'])->name('manage-team-members');
     Route::get('/admin/team-member/delete/{hash_id}', [App\Http\Controllers\Admin\AdminTeamController::class, 'deleteTeamMember'])->name('delete-team-member');
     Route::match(array('GET','POST'),'/admin/team-member/edit/{hash_id}', [App\Http\Controllers\Admin\AdminTeamController::class, 'editTeamMember'])->name('edit-team-member');
+    Route::match(array('GET','POST'),'/admin/team-member-image/{hash_id}', [App\Http\Controllers\Admin\AdminTeamController::class, 'teamUploadImages'])->name('team-image-upload');
 
     Route::match(array('GET','POST'),'/admin/create-contact', [App\Http\Controllers\Admin\AdminContactController::class, 'createContact'])->name('create-contact');
     Route::get('/admin/manage-contacts', [App\Http\Controllers\Admin\AdminContactController::class, 'manageContacts'])->name('manage-contact');

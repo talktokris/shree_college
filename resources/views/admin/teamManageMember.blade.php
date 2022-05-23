@@ -59,9 +59,14 @@
                 @foreach ($teamData as $item)
                 	<div class="col">
 
-
+            <?php $teamImage= $item->image;
+            if($teamImage=='') { $image_location = url('/assets/images/team/no-image.jpg') ;}
+            else {  $image_location = url('/assets/images/team').'/'.$item->id.'/'.$item->image ; }
+            ?>
 						<div class="card">
-							<img src="assets/images/gallery/01.png" class="card-img-top" alt="...">
+							<img src="{{ $image_location }}" class="card-img-top" alt="...">
+								<p class="card-text" style="text-align: center;"><a href="<?php echo url('/admin/team-member-image').'/'. base64_encode($item->id) ;?>" class="btn btn-info mt-3">Upload or Change Photo</a></p>
+
 							<div class="card-body">
 
 								<h5 class="card-title">{{ $item->name }} <span>({{$item->post}})</span></h5>

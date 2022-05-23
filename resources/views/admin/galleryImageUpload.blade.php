@@ -21,7 +21,36 @@
 				</div>
 				<!--end breadcrumb-->
 				<div class="row">
-					<div class="col-xl-9 mx-auto">
+                     <!---- allert message Start -->
+                     @if(Session::has('flash_message_success'))
+                     <div class="alert alert-success border-0 bg-success alert-dismissible fade show py-2">
+                         <div class="d-flex align-items-center">
+                             <div class="font-35 text-white"><i class="bx bxs-check-circle"></i>
+                             </div>
+                             <div class="ms-3">
+                                 <h6 class="mb-0 text-white">Success Alerts</h6>
+                                 <div class="text-white">{!! session('flash_message_success') !!} </div>
+                             </div>
+                         </div>
+                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                     </div>
+                     @endif
+
+                     @if(Session::has('flash_message_error'))
+                     <div class="alert alert-danger border-0 bg-danger alert-dismissible fade show py-2">
+                         <div class="d-flex align-items-center">
+                             <div class="font-35 text-white"><i class="bx bxs-message-square-x"></i>
+                             </div>
+                             <div class="ms-3">
+                                 <h6 class="mb-0 text-white">Error Alerts</h6>
+                                 <div class="text-white">{!! session('flash_message_error') !!}</div>
+                             </div>
+                         </div>
+                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                     </div>
+                     @endif
+                     <!---- allert message End -->
+					<div class="col-xl-4 mx-auto">
 
 
 						<h6 class="mb-0 text-uppercase">Upload New Images to Gallery</h6>
@@ -30,27 +59,39 @@
 							<div class="card-body">
 								<div class="p-4 border rounded">
 
-                                <div class="card">
-                                    <img src="assets/images/gallery/03.png" class="card-img-top" alt="...">
 
-                                </div>
-									<form class="needs-validation">
+
+
+                                        <form class="needs-validation" method="post" enctype="multipart/form-data" action="{{ url('/admin/upload-images') }}" >
+                                            @csrf
 
 										<div class="mb-3">
-											<select class="form-select"  aria-label="select example" required>
-												<option value="">Open this select menu</option>
-												<option value="1">One</option>
-												<option value="2">Two</option>
-												<option value="3">Three</option>
+											<label for="validationCustom02" class="form-label">Select Gallery Category</label>
+
+
+                                            <select name="catagory_name" class="form-select" id="validationCustom04" required="">
+                                                    @foreach ($galleryCatData as $item)
+                                                    <option value="{{ $item->catagory_name}}">{{ $item->catagory_name}}</option>
+                                                    @endforeach
 											</select>
-											<div class="invalid-feedback">Example invalid select feedback</div>
+                                            @error('catagory_name')
+                                            <div class="invalid-feedback">
+                                           {{ $message }}
+                                            </div>
+                                             @enderror
 										</div>
 										<div class="mb-3">
-											<input type="file" class="form-control" aria-label="file example" required>
-											<div class="invalid-feedback">Example invalid form file feedback</div>
+											<label for="validationCustom02" class="form-label">Upload Image</label>
+
+											<input name="image_name" type="file"  class="form-control  @error('phone_four') is-invalid @enderror" aria-label="file example" required>
+                                            @error('image_name')
+                                            <div class="invalid-feedback">
+                                           {{ $message }}
+                                            </div>
+                                             @enderror
 										</div>
 										<div class="mb-3">
-											<button class="btn btn-primary" type="submit" disabled>Submit form</button>
+											<button class="btn btn-primary" type="submit">Upload</button>
 										</div>
 									</form>
 								</div>

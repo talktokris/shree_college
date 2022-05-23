@@ -26,10 +26,41 @@
 						<h6 class="mb-0 text-uppercase p-2">Filter by gallery category</h6>
 
 						<div class="card">
+
+                             <!---- allert message Start -->
+                             @if(Session::has('flash_message_success'))
+                             <div class="alert alert-success border-0 bg-success alert-dismissible fade show py-2">
+                                 <div class="d-flex align-items-center">
+                                     <div class="font-35 text-white"><i class="bx bxs-check-circle"></i>
+                                     </div>
+                                     <div class="ms-3">
+                                         <h6 class="mb-0 text-white">Success Alerts</h6>
+                                         <div class="text-white">{!! session('flash_message_success') !!} </div>
+                                     </div>
+                                 </div>
+                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                             </div>
+                             @endif
+
+                             @if(Session::has('flash_message_error'))
+                             <div class="alert alert-danger border-0 bg-danger alert-dismissible fade show py-2">
+                                 <div class="d-flex align-items-center">
+                                     <div class="font-35 text-white"><i class="bx bxs-message-square-x"></i>
+                                     </div>
+                                     <div class="ms-3">
+                                         <h6 class="mb-0 text-white">Error Alerts</h6>
+                                         <div class="text-white">{!! session('flash_message_error') !!}</div>
+                                     </div>
+                                 </div>
+                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                             </div>
+                             @endif
+                             <!---- allert message End -->
+
 							<div class="card-body">
 								<div class="p-4 border rounded">
-									<form class="row g-3 needs-validation" novalidate>
-
+                                        <form class="row g-3 needs-validation" method="post" action="{{ url('/admin/manage-gallery-images') }}" >
+                                            @csrf
                                     <div class="col-md-2">
 											<label for="validationCustom04" class="form-label">Select Gallery</label>
 
@@ -37,9 +68,13 @@
 										</div>
 										<div class="col-md-6">
 
-											<select class="form-select" id="validationCustom04" required>
-												<option selected disabled value="">Choose...</option>
-												<option>...</option>
+											<select name="catagory_name" class="form-select" id="validationCustom04" required>
+
+												<option value="all">All</option>
+                                                @foreach ($galCatData as $galItem)
+                                                   <option value="{{ $galItem->catagory_name }}">{{ $galItem->catagory_name }}</option>
+                                                @endforeach
+
 											</select>
 											<div class="invalid-feedback">Please select a valid state.</div>
 										</div>
@@ -66,42 +101,24 @@
 				<h6 class="mb-0 text-uppercase">Card with images</h6>
 				<hr/>
 				<div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 row-cols-xl-4">
-					<div class="col">
+
+                    @foreach ($galleryDataAll as $item)
+
+                    <div class="col">
 						<div class="card">
-							<img src="assets/images/gallery/01.png" class="card-img-top" alt="...">
+							<img src="{{ url('assets/images/gallery')}}/{{$item->id.'/'.$item->thumbnail_img }}" class="card-img-top" alt="...">
 							<div class="card-body">
-								<h5 class="card-title">Card title</h5>
-								<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>	<a href="javascript:;" class="btn btn-primary">Go somewhere</a>
-							</div>
+								<h5 class="card-title">{{ $item->catagory_name }}</h5>
+								<p class="card-text"></p>	<a href="<?php echo url('/admin/gallery-image/delete/').'/'. base64_encode($item->id) ;?>" class="btn btn-danger"><i class="bx bx-trash"></i></a>
+
+                            </div>
 						</div>
 					</div>
-					<div class="col">
-						<div class="card">
-							<img src="assets/images/gallery/02.png" class="card-img-top" alt="...">
-							<div class="card-body">
-								<h5 class="card-title">Card title</h5>
-								<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>	<a href="javascript:;" class="btn btn-danger">Go somewhere</a>
-							</div>
-						</div>
-					</div>
-					<div class="col">
-						<div class="card">
-							<img src="assets/images/gallery/03.png" class="card-img-top" alt="...">
-							<div class="card-body">
-								<h5 class="card-title">Card title</h5>
-								<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>	<a href="javascript:;" class="btn btn-success">Go somewhere</a>
-							</div>
-						</div>
-					</div>
-					<div class="col">
-						<div class="card">
-							<img src="assets/images/gallery/04.png" class="card-img-top" alt="...">
-							<div class="card-body">
-								<h5 class="card-title">Card title</h5>
-								<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>	<a href="javascript:;" class="btn btn-warning">Go somewhere</a>
-							</div>
-						</div>
-					</div>
+
+                    @endforeach
+
+
+
 				</div>
 				<!--end row-->
 

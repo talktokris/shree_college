@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Team_list;
+use Intervention\Image\Facades\Image;
+
 
 class AdminTeamController extends Controller
 {
@@ -139,6 +141,71 @@ class AdminTeamController extends Controller
 
 
 
+
+
+
+    }
+
+
+    public function teamUploadImages(Request $request, $hash_id=null){
+
+        $Team_listData= Team_list::where('id','=', base64_decode($hash_id))->get();
+        $id= base64_decode($hash_id);
+
+        $savingPath='assets/images/team';
+
+        if ('POST' === $request->getMethod()){
+
+            $validatedData= $request->validate([
+                'image_name'=>'required|mimes:png,jpg,jpeg|max:8048',
+
+            ]);
+
+            $data = $request->all();
+
+
+
+
+            $imageName = $data['image_name'];
+
+           // $get_id = $next_ID;
+            $maxOriginalNameSize=20;
+            $ImageNameOrg=$imageName->getClientOriginalName();
+            if(strlen($ImageNameOrg) > $maxOriginalNameSize){ $ImageNewNameSet=substr($ImageNameOrg, 0, $maxOriginalNameSize);
+                $ImageNewName= $ImageNewNameSet.'.'.$imageName->getClientOriginalExtension();
+             }
+            else { $ImageNewName = $ImageNameOrg;}// shorting the image name;
+
+            $getImageName= date('Y-m-d-His').'-'.$ImageNewName;
+
+            /* Saving the images Start */
+
+            $thumbImgName='thumb-'.$getImageName;
+
+            $get_id = $id;
+
+            $newPath= $savingPath.'/'.$get_id;
+
+          if (!file_exists($newPath)) {  mkdir($newPath, 0777, true);  }
+
+
+            $img = Image::make($imageName)->fit(500, 500, function ($constraint) {
+                $constraint->upsize();
+            });
+             $img->save($newPath.'/'.$thumbImgName, 60);
+
+                $imageSave = Team_list::where("id", $get_id)->update(["image" => $thumbImgName]);
+
+                if($imageSave){
+                     return redirect("admin/manage-team-members")->with('flash_message_success', ' Image uploaded successfully');  }
+                else {   return  redirect("admin/manage-team-members")->with('flash_message_error', 'Oops ! Something went wrong, Please contact admin.');  }
+
+
+        }
+
+
+
+        return view("admin.teamImageUpload")->with(compact("Team_listData"))->with('hash_id', $hash_id);
 
 
 

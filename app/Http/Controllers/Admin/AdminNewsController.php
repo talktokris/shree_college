@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\News_list;
+use Intervention\Image\Facades\Image;
+
 
 class AdminNewsController extends Controller
 {
@@ -155,14 +157,86 @@ class AdminNewsController extends Controller
 
 
 
+            }
+            else {  return view("admin.newsEditPost")->with(compact("newsData")); }
+
+
     }
-    else {  return view("admin.newsEditPost")->with(compact("newsData")); }
+
+
+    public function newsImageUpload(Request $request, $hash_id=null){
+
+        $News_listData= News_list::where('id','=', base64_decode($hash_id))->get();
+        $id= base64_decode($hash_id);
+
+        $savingPath='assets/images/news';
+
+        if ('POST' === $request->getMethod()){
+
+            $validatedData= $request->validate([
+                'image_name'=>'required|mimes:png,jpg,jpeg|max:8048',
+
+            ]);
+
+            $data = $request->all();
 
 
 
 
+            $imageName = $data['image_name'];
+
+           // $get_id = $next_ID;
+            $maxOriginalNameSize=20;
+            $ImageNameOrg=$imageName->getClientOriginalName();
+            if(strlen($ImageNameOrg) > $maxOriginalNameSize){ $ImageNewNameSet=substr($ImageNameOrg, 0, $maxOriginalNameSize);
+                $ImageNewName= $ImageNewNameSet.'.'.$imageName->getClientOriginalExtension();
+             }
+            else { $ImageNewName = $ImageNameOrg;}// shorting the image name;
+
+            $getImageName= date('Y-m-d-His').'-'.$ImageNewName;
+
+            /* Saving the images Start */
+
+            $thumbImgName='thumb-'.$getImageName;
+            $largeImgName='large-'.$getImageName;
+
+            $get_id = $id;
+
+            $newPath= $savingPath.'/'.$get_id;
+
+          if (!file_exists($newPath)) {  mkdir($newPath, 0777, true);  }
 
 
-      }
+
+          $img = Image::make($imageName)->fit(200, 200, function ($constraint) {
+            $constraint->upsize();
+        });
+         $img->save($newPath.'/'.$thumbImgName, 60);
+
+
+
+        // Large Image Save
+        $img3 = Image::make($imageName)->fit(1000, 1000, function ($constraint) {
+            $constraint->upsize();
+        });
+
+        $img3->save($newPath.'/'.$largeImgName, 60);
+
+                $imageSave = News_list::where("id", $get_id)->update(["thumbnail_img" => $thumbImgName,"large_img" => $largeImgName]);
+
+                if($imageSave){
+                     return redirect("admin/search-news-posts")->with('flash_message_success', ' Image uploaded successfully');  }
+                else {   return  redirect("admin/search-news-posts")->with('flash_message_error', 'Oops ! Something went wrong, Please contact admin.');  }
+
+
+        }
+
+
+
+        return view("admin.newsImageUpload")->with(compact("News_listData"))->with('hash_id', $hash_id);
+
+
+
+    }
 
 }

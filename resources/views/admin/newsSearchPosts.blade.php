@@ -75,8 +75,12 @@
 
                                 @foreach ($newsData as $item)
 
+                                <?php $imageFindName=$item->thumbnail_img;
+                                if($imageFindName==""){   $news_image= url('assets/images/news/no-news.png'); }
+                                else {   $news_image= url('assets/images/news').'/'.$item->id.'/'.$item->thumbnail_img; } ?>
                                 <tr>
-                                    <td>{{ $item->id }}</td>
+                                    <td style="text-align: center;"><img src="<?php echo $news_image ;?>"  style="width: 200px;" ></br>
+                                    <a href="{{ url('/admin/news-image-upload')}}/{{ base64_encode($item->id) }}" class="btn btn-warning" style="margin: 1em;">Change Image</a></td>
                                     <td><h5>{{ $item->news_title}}</h5>
                                         {{ $item->news_content}}</td>
                                     <td><strong> Created User:</strong> {{ $item->posted_user_email }}</br>

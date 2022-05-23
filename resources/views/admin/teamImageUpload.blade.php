@@ -7,22 +7,20 @@
 			<div class="page-content">
 				<!--breadcrumb-->
 				<div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-					<div class="breadcrumb-title pe-3">Contact</div>
+					<div class="breadcrumb-title pe-3">Gallery</div>
 					<div class="ps-3">
 						<nav aria-label="breadcrumb">
 							<ol class="breadcrumb mb-0 p-0">
-								<li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-phone"></i></a>
+								<li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-photo-album"></i></a>
 								</li>
-								<li class="breadcrumb-item active" aria-current="page">Manage Contact</li>
+								<li class="breadcrumb-item active" aria-current="page">Upload Image</li>
 							</ol>
 						</nav>
 					</div>
 
 				</div>
 				<!--end breadcrumb-->
-				<h6 class="mb-0 text-uppercase">College Contact List </h6>
-				<hr/>
-				<div class="card">
+				<div class="row">
                      <!---- allert message Start -->
                      @if(Session::has('flash_message_success'))
                      <div class="alert alert-success border-0 bg-success alert-dismissible fade show py-2">
@@ -52,60 +50,48 @@
                      </div>
                      @endif
                      <!---- allert message End -->
-					<div class="card-body">
-						<div class="table-responsive">
-							<table id="example" class="table table-striped table-bordered" style="width:100%">
-								<thead>
-									<tr>
-										<th>Organization</th>
-										<th>Email</th>
-										<th>Phone</th>
-
-										<th>Created</th>
-                                        <th>Edit</th>
-										<th>Delete</th>
-									</tr>
-								</thead>
-								<tbody>
-
-                                    @foreach ($ContactData as $item)
+					<div class="col-xl-6 mx-auto">
 
 
-									<tr>
-										<td><h5>Name :  {{ $item->organization_name }}</h5>
-                                            <strong>Address : </strong> {{ $item->address }}</br>
-                                            <?php echo $item->google_map_link ;?></td>
-                                            <td> {{ $item->email_one }}</br>
-                                                 {{ $item->email_two }}</td>
-                                            <td><strong></strong> {{ $item->phone_one }}</br> {{ $item->phone_two }}</br>
-                                            {{ $item->phone_three }}</br> {{ $item->phone_four }}</td>
-										<td>{{ $item->created_at->diffForHumans() }}</td>
-                                        <td><a href="<?php echo url('/admin/contact/edit/').'/'. base64_encode($item->id) ;?>" class="btn btn-warning"><i class="bx bx-pencil"></i></a></td>
-                                        <td><?php if($item->id!=1){?>
-                                            <a href="<?php echo url('/admin/contact/delete/').'/'. base64_encode($item->id) ;?>" class="btn btn-danger"><i class="bx bx-trash"></i></a> <?php }?></td>
+						<h6 class="mb-0 text-uppercase">Upload New Images to Gallery</h6>
+						<hr/>
+						<div class="card">
+							<div class="card-body">
+								<div class="p-4 border rounded">
 
-									</tr>
 
+                                        @foreach ($Team_listData as $item)
+                                        <form class="needs-validation" method="post" enctype="multipart/form-data" action="{{ url('/admin/team-member-image') }}/{{ $hash_id}}" >
+                                            @csrf
+                                            <div class="mb-3">
+                                                <label for="validationCustom01" class="form-label">Name</label>
+                                                <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="validationCustom03" value="{{ $item->name }}" readonly>
+
+                                            </div>
+
+										<div class="mb-3">
+											<label for="validationCustom02" class="form-label">Upload Image</label>
+                                            <input name="hash_id" value="{{ $hash_id }}" type="hidden">
+
+											<input name="image_name" type="file"  class="form-control  @error('phone_four') is-invalid @enderror" aria-label="file example" required>
+                                            @error('image_name')
+                                            <div class="invalid-feedback">
+                                           {{ $message }}
+                                            </div>
+                                             @enderror
+										</div>
+										<div class="mb-3">
+											<button class="btn btn-primary" type="submit">Upload</button>
+										</div>
+									</form>
                                     @endforeach
-
-
-								</tbody>
-								<tfoot>
-									<tr>
-                                        <th>Name</th>
-										<th>Email</th>
-										<th>Phone</th>
-
-										<th>Created</th>
-										<th>Edit</th>
-										<th>Delete</th>
-									</tr>
-								</tfoot>
-							</table>
+								</div>
+							</div>
 						</div>
+
 					</div>
 				</div>
-
+				<!--end row-->
 			</div>
 		</div>
 
