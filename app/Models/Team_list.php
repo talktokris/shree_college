@@ -13,6 +13,8 @@ class Team_list extends Model
     protected $fillable = [
         'name',
         'job_scope',
+        'post',
+        'education',
         'facebook_link',
         'twitter_link',
         'email',

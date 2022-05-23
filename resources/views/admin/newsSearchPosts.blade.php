@@ -81,8 +81,8 @@
                                 <tr>
                                     <td style="text-align: center;"><img src="<?php echo $news_image ;?>"  style="width: 200px;" ></br>
                                     <a href="{{ url('/admin/news-image-upload')}}/{{ base64_encode($item->id) }}" class="btn btn-warning" style="margin: 1em;">Change Image</a></td>
-                                    <td><h5>{{ $item->news_title}}</h5>
-                                        {{ $item->news_content}}</td>
+                                    <td style="word-break:break-all;"><h5 style="overflow-wrap: break-word;  white-space:nowrap;">{{ $item->news_title}}</h5>
+                                       <p style="overflow-wrap: break-word;  white-space:normal;"> {{ $item->news_content}}</p></td>
                                     <td><strong> Created User:</strong> {{ $item->posted_user_email }}</br>
                                         <strong> Created Date:</strong> {{ $item->created_at->diffForHumans()  }}</br>
                                         <strong> Updated Date:</strong>{{ $item->updated_at->diffForHumans()   }}</td>

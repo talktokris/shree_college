@@ -1,3 +1,8 @@
 .btn i {
     margin-right: 0px !important;
 }
+
+table.dataTable tbody td {
+    word-break: break-word;
+    vertical-align: top;
+}

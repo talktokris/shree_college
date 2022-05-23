@@ -59,7 +59,7 @@
 									<form class="row g-3 needs-validation" method="post" action="{{ url('/admin/create-contact') }}" >
                                         @csrf
 										<div class="col-md-6">
-											<label for="validationCustom01" class="form-label">Organization Name</label>
+											<label for="validationCustom01" class="form-label">Organization Name *</label>
                                             <input type="text" name="organization_name" class="form-control @error('organization_name') is-invalid @enderror" id="validationCustom03" value="{{ old('organization_name') }}" required="">
 
                                             @error('organization_name')
@@ -71,7 +71,7 @@
 
 
                                         <div class="col-md-6">
-											<label for="validationCustom02" class="form-label">Address</label>
+											<label for="validationCustom02" class="form-label">Address *</label>
                                             <input type="text" name="address" class="form-control @error('address') is-invalid @enderror" id="validationCustom03" value="{{ old('address') }}" required="">
 
                                             @error('address')
@@ -83,7 +83,7 @@
 
                                         <div class="col-md-12">
 											<label for="validationCustom02" class="form-label">Google Map Link</label>
-                                            <input type="text" name="google_map_link" class="form-control @error('google_map_link') is-invalid @enderror" id="validationCustom03" value="{{ old('google_map_link') }}" required="">
+                                            <input type="text" name="google_map_link" class="form-control @error('google_map_link') is-invalid @enderror" id="validationCustom03" value="{{ old('google_map_link') }}" >
 
                                             @error('google_map_link')
                                             <div class="invalid-feedback">
@@ -92,9 +92,9 @@
                                              @enderror
 										</div>
 										<div class="col-md-6">
-											<label for="validationCustomUsername" class="form-label">Email</label>
+											<label for="validationCustomUsername" class="form-label">Email *</label>
 											<div class="input-group has-validation"> <span class="input-group-text" id="inputGroupPrepend"><i class="bx bx-envelope"></i></span>
-                                                <input type="text" name="email_one" class="form-control @error('email_one') is-invalid @enderror" id="validationCustom03" value="{{ old('email_one') }}" >
+                                                <input type="text" name="email_one" class="form-control @error('email_one') is-invalid @enderror" id="validationCustom03" value="{{ old('email_one') }}" required="">
 
                                                 @error('email_one')
                                                 <div class="invalid-feedback">
@@ -117,9 +117,9 @@
 										</div>
 
                                          <div class="col-md-6">
-											<label for="validationCustomUsername" class="form-label">Phone No</label>
+											<label for="validationCustomUsername" class="form-label">Phone No *</label>
 											<div class="input-group has-validation"> <span class="input-group-text" id="inputGroupPrepend"><i class="bx bx-phone"></i></span>
-                                                <input type="text" name="phone_one" class="form-control @error('phone_one') is-invalid @enderror" id="validationCustom03" value="{{ old('phone_one') }}">
+                                                <input type="text" name="phone_one" class="form-control @error('phone_one') is-invalid @enderror" id="validationCustom03" value="{{ old('phone_one') }}" required="">
 
                                                 @error('phone_one')
                                                 <div class="invalid-feedback">

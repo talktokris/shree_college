@@ -62,11 +62,11 @@ class AdminContactController extends Controller
             'organization_name' => 'required|string|min:10|max:150',
             'address' => 'required|string|min:5|max:100',
             'email_one' => 'required|email',
-            'email_two' => 'email',
-            'phone_one' => 'required|string|min:2|max:14',
-            'phone_two' => 'nullable|max:14',
-            'phone_three' => 'nullable|max:14',
-            'phone_four' => 'nullable|max:14',
+            'email_two' => 'nullable|email',
+            'phone_one' => 'required|string|min:2|max:20',
+            'phone_two' => 'nullable|max:20',
+            'phone_three' => 'nullable|max:20',
+            'phone_four' => 'nullable|max:20',
             'status' => 'required|integer|between:0,10'
             ]);
                     // $email = Auth::user()->email;
@@ -113,10 +113,10 @@ class AdminContactController extends Controller
                     'address' => 'required|string|min:5|max:100',
                     'email_one' => 'required|email',
                     'email_two' => 'email',
-                    'phone_one' => 'required|string|min:2|max:14',
-                    'phone_two' => 'nullable|max:14',
-                    'phone_three' => 'nullable|max:14',
-                    'phone_four' => 'nullable|max:14',
+                    'phone_one' => 'required|string|min:2|max:20',
+                    'phone_two' => 'nullable|max:20',
+                    'phone_three' => 'nullable|max:20',
+                    'phone_four' => 'nullable|max:20',
                     'status' => 'required|integer|between:0,10'
                     ]);
 

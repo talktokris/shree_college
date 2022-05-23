@@ -82,6 +82,7 @@ class AdminTeamController extends Controller
             $TeamMemberSave->name= $data['name'];
             $TeamMemberSave->job_scope= $data['job_scope'];
             $TeamMemberSave->post= $data['post'];
+            $TeamMemberSave->education= $data['education'];
             $TeamMemberSave->facebook_link= $data['facebook_link'];
             $TeamMemberSave->twitter_link= $data['twitter_link'];
             $TeamMemberSave->email= $data['email'];
@@ -124,7 +125,7 @@ class AdminTeamController extends Controller
 
                     $id= base64_decode($hash_id);
 
-                    $TeamMemberEdit = Team_list::where("id", $id)->update(["name" => $data['name'],"job_scope" => $data['job_scope'],"post" => $data['post'],"email" => $data['email'],"facebook_link" => $data['facebook_link'],"twitter_link" => $data['twitter_link'],"status" => $data['status']]);
+                    $TeamMemberEdit = Team_list::where("id", $id)->update(["name" => $data['name'],"job_scope" => $data['job_scope'],"post" => $data['post'],"education"=>$data['education'],"email" => $data['email'],"facebook_link" => $data['facebook_link'],"twitter_link" => $data['twitter_link'],"status" => $data['status']]);
 
 
                        //  $TeamMemberEdit->save()->where("id", $id);

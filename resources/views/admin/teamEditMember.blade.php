@@ -99,6 +99,17 @@
 										</div>
 
                                         <div class="col-md-6">
+											<label for="validationCustom02" class="form-label">Qualification</label>
+                                            <input type="text" name="education" class="form-control @error('education') is-invalid @enderror" id="validationCustom03" value="{{ old('education') ?? $itemSingle->education }}" >
+
+                                            @error('education')
+                                            <div class="invalid-feedback">
+                                           {{ $message }}
+                                            </div>
+                                             @enderror
+										</div>
+
+                                        <div class="col-md-6">
 											<label for="validationCustom02" class="form-label">Job Title</label>
                                             <input type="text" name="post" class="form-control @error('post') is-invalid @enderror" id="validationCustom03" value="{{ old('post') ?? $itemSingle->post }}" required="">
 

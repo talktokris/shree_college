@@ -19,7 +19,7 @@ class RouteServiceProvider extends ServiceProvider
      */
    // public const HOME = '/dashboard'; // this is for normal user which i have commented to redirect to admin/dashboard
 
-    public const HOME = 'dashboard';
+    public const HOME = 'admin/dashboard';
 
     public const ADMIN_HOME = '/admin/dashboard';
 

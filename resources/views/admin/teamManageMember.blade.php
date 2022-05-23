@@ -73,6 +73,8 @@
                                 <table class="table">
                                     <tr><td><strong>Job Scope :</strong> </td> <td>{{ $item->job_scope }}</td></tr>
                                     <tr><td><strong>Post :</strong></td> <td>{{ $item->post }}</td></tr>
+                                    <tr><td><strong>Qualification :</strong></td> <td>{{ $item->education }}</td></tr>
+
                                     <tr><td><strong>Email :</strong></td> <td>{{ $item->email }}</td></tr>
                                     <tr><td><strong>Facebook :</strong></td> <td>{{ $item->facebook_link }}</td></tr>
                                     <tr><td><strong>Twitter :</strong></td> <td>{{ $item->twitter_link }}</td></tr>
