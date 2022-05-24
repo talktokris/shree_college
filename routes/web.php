@@ -45,6 +45,8 @@ Route::get('/cima', [App\Http\Controllers\CoursePageController::class, 'cima'])-
 Route::get('/acca', [App\Http\Controllers\CoursePageController::class, 'acca'])->name('acca');
 Route::get('/news', [App\Http\Controllers\NewsPageController::class, 'news'])->name('news');
 Route::get('/gallery', [App\Http\Controllers\GalleryPageController::class, 'gallery'])->name('gallery');
+Route::get('/gallery/type/{hash_id}', [App\Http\Controllers\GalleryPageController::class, 'galleryType'])->name('gallery');
+
 Route::get('/faq', [App\Http\Controllers\FaqPageController::class, 'faq'])->name('faq');
 Route::get('/inquiry', [App\Http\Controllers\InquiryPageController::class, 'inquiry'])->name('inquiry');
 Route::get('/contact', [App\Http\Controllers\ContactPageController::class, 'contact'])->name('contact');

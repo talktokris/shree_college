@@ -14,7 +14,7 @@
             </div>
             <header class="kingster-header-wrap kingster-header-style-plain  kingster-style-menu-right kingster-sticky-navigation kingster-style-fixed" data-navigation-offset="75px">
 
-            @include('public/layouts/header') ; 
+            @include('public/layouts/header') ;
 
             </header>
 
@@ -36,7 +36,7 @@
                         </div>
                     </div>
                 </div>
-           
+
             <div class="kingster-page-wrapper" id="kingster-page-wrapper">
                 <div class="gdlr-core-page-builder-body">
                     <div class="gdlr-core-pbf-sidebar-wrapper ">
@@ -63,301 +63,69 @@
 
                                     <div class="gdlr-core-pbf-element">
                                         <div class="gdlr-core-personnel-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-personnel-item-style-medium gdlr-core-personnel-style-medium">
-                                            <div class="gdlr-core-personnel-list-column  gdlr-core-column-60 gdlr-core-column-first gdlr-core-item-pdlr">
+
+
+                                            @foreach ($teamData as $item)
+
+                                            <?php $imageName= $item->image;
+                                            if($imageName ==''){ $imageLinkString= url('/assets/images/team/no-image.jpg'); }
+                                            else { $imageLinkString= url('/assets/images/team').'/'.$item->id.'/'.$item->image;} ?>
+
+                                               <div class="gdlr-core-personnel-list-column  gdlr-core-column-60 gdlr-core-column-first gdlr-core-item-pdlr">
                                                 <div class="gdlr-core-personnel-list clearfix">
                                                     <div class="gdlr-core-personnel-list-image gdlr-core-media-image  gdlr-core-opacity-on-hover gdlr-core-zoom-on-hover">
-                                                        <a href="#"><img src="{{ asset('assets/upload/personnel-1-500x500.jpg') }}" alt="" width="200" height="200" title="personnel-1" /></a>
+                                                        <a href="#"><img src="{{ $imageLinkString }}" alt="" width="200" height="200" title="personnel-1" /></a>
                                                     </div>
                                                     <div class="gdlr-core-personnel-list-content-wrap">
                                                         <div class="gdlr-core-personnel-list-social">
-                                                            <div class="gdlr-core-social-network-item gdlr-core-item-pdb  gdlr-core-none-align" style="padding-bottom: 0px ;"><a href="#" target="_blank" class="gdlr-core-social-network-icon" title="facebook" style="font-size: 18px ;color: #50bd77 ;"><i class="fa fa-facebook" ></i></a><a href="#url" target="_blank" class="gdlr-core-social-network-icon" title="twitter" style="font-size: 18px ;color: #50bd77 ;margin-left: 14px ;"><i class="fa fa-twitter" ></i></a></div>
+                                                            <div class="gdlr-core-social-network-item gdlr-core-item-pdb  gdlr-core-none-align" style="padding-bottom: 0px ;"><a href="{{ $item->facebook_link }}" target="_blank" class="gdlr-core-social-network-icon" title="facebook" style="font-size: 18px ;color: #50bd77 ;"><i class="fa fa-facebook" ></i></a><a href="{{ $item->twitter_link}}" target="_blank" class="gdlr-core-social-network-icon" title="twitter" style="font-size: 18px ;color: #50bd77 ;margin-left: 14px ;"><i class="fa fa-twitter" ></i></a></div>
                                                         </div>
-                                                        <h3 class="gdlr-core-personnel-list-title" style="font-size: 23px ;font-weight: 700 ;letter-spacing: 0px ;text-transform: none ;"><a href="#" >Program Director</a></h3>
-                                                        <div class="gdlr-core-personnel-list-position gdlr-core-info-font gdlr-core-skin-caption" style="font-size: 16px ;font-weight: 500 ;font-style: normal ;letter-spacing: 0px ;">Sudeep Chalise</div>
+                                                        <h3 class="gdlr-core-personnel-list-title" style="font-size: 23px ;font-weight: 700 ;letter-spacing: 0px ;text-transform: none ;"><a href="#" >{{ $item->name }}</a></h3>
+                                                        <div class="gdlr-core-personnel-list-position gdlr-core-info-font gdlr-core-skin-caption" style="font-size: 16px ;font-weight: 500 ;font-style: normal ;letter-spacing: 0px ;">{{ $item->post }}</div>
                                                         <div class="gdlr-core-personnel-info">
-                                                            <div class="kingster-personnel-info-list kingster-type-email"><i class="kingster-personnel-info-list-icon fa fa-envelope-open"></i>sudeep@shreecollage.com</div>
+                                                            <div class="kingster-personnel-info-list kingster-type-email"><i class="kingster-personnel-info-list-icon fa fa-envelope-open"></i>{{ $item->email }}</div>
 
                                                         </div>
-                                                       </div>
-                                                </div>
-                                            </div>
-                                            
-                                            
-
-                                            <div class="gdlr-core-personnel-list-column  gdlr-core-column-60 gdlr-core-column-first gdlr-core-item-pdlr">
-                                                <div class="gdlr-core-personnel-list clearfix">
-                                                    <div class="gdlr-core-personnel-list-image gdlr-core-media-image  gdlr-core-opacity-on-hover gdlr-core-zoom-on-hover">
-                                                        <a href="#"><img src="{{ asset('assets/upload/personnel-1-500x500.jpg') }}" alt="" width="200" height="200" title="personnel-1" /></a>
-                                                    </div>
-                                                    <div class="gdlr-core-personnel-list-content-wrap">
-                                                        <div class="gdlr-core-personnel-list-social">
-                                                            <div class="gdlr-core-social-network-item gdlr-core-item-pdb  gdlr-core-none-align" style="padding-bottom: 0px ;"><a href="#" target="_blank" class="gdlr-core-social-network-icon" title="facebook" style="font-size: 18px ;color: #50bd77 ;"><i class="fa fa-facebook" ></i></a><a href="#url" target="_blank" class="gdlr-core-social-network-icon" title="twitter" style="font-size: 18px ;color: #50bd77 ;margin-left: 14px ;"><i class="fa fa-twitter" ></i></a></div>
-                                                        </div>
-                                                        <h3 class="gdlr-core-personnel-list-title" style="font-size: 23px ;font-weight: 700 ;letter-spacing: 0px ;text-transform: none ;"><a href="#" >Pritam Agrawal</a></h3>
-                                                        <div class="gdlr-core-personnel-list-position gdlr-core-info-font gdlr-core-skin-caption" style="font-size: 16px ;font-weight: 500 ;font-style: normal ;letter-spacing: 0px ;">Program Co-ordinator</div>
-                                                        <div class="gdlr-core-personnel-info">
-                                                            <div class="kingster-personnel-info-list kingster-type-email"><i class="kingster-personnel-info-list-icon fa fa-envelope-open"></i>pagrawal@shreecollage.com</div>
-
-                                                        </div>
-                                                        </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="gdlr-core-personnel-list-column  gdlr-core-column-60 gdlr-core-column-first gdlr-core-item-pdlr">
-                                                <div class="gdlr-core-personnel-list clearfix">
-                                                    <div class="gdlr-core-personnel-list-image gdlr-core-media-image  gdlr-core-opacity-on-hover gdlr-core-zoom-on-hover">
-                                                        <a href="#"><img src="{{ asset('assets/upload/personnel-1-500x500.jpg') }}" alt="" width="200" height="200" title="personnel-1" /></a>
-                                                    </div>
-                                                    <div class="gdlr-core-personnel-list-content-wrap">
-                                                        <div class="gdlr-core-personnel-list-social">
-                                                            <div class="gdlr-core-social-network-item gdlr-core-item-pdb  gdlr-core-none-align" style="padding-bottom: 0px ;"><a href="#" target="_blank" class="gdlr-core-social-network-icon" title="facebook" style="font-size: 18px ;color: #50bd77 ;"><i class="fa fa-facebook" ></i></a><a href="#url" target="_blank" class="gdlr-core-social-network-icon" title="twitter" style="font-size: 18px ;color: #50bd77 ;margin-left: 14px ;"><i class="fa fa-twitter" ></i></a></div>
-                                                        </div>
-                                                        <h3 class="gdlr-core-personnel-list-title" style="font-size: 23px ;font-weight: 700 ;letter-spacing: 0px ;text-transform: none ;"><a href="#" >Rambabu Parajuli </a></h3>
-                                                        <div class="gdlr-core-personnel-list-position gdlr-core-info-font gdlr-core-skin-caption" style="font-size: 16px ;font-weight: 500 ;font-style: normal ;letter-spacing: 0px ;">Ass. Co-ordinator</div>
-                                                        <div class="gdlr-core-personnel-info">
-                                                            <div class="kingster-personnel-info-list kingster-type-email"><i class="kingster-personnel-info-list-icon fa fa-envelope-open"></i>bramp@shreecollage.com</div>
-
+                                                        <div class="gdlr-core-personnel-list-content">
+                                                         <?php if($item->education!=''){ ?> <p>&#8211; {{ $item->education }}</p> <?php }?>
                                                         </div>
                                                        </div>
                                                 </div>
                                             </div>
 
+                                            @endforeach
 
-
-
-
-
-
-
-                                            <div class="gdlr-core-personnel-list-column  gdlr-core-column-60 gdlr-core-column-first gdlr-core-item-pdlr">
-                                                <div class="gdlr-core-personnel-list clearfix">
-                                                    <div class="gdlr-core-personnel-list-image gdlr-core-media-image  gdlr-core-opacity-on-hover gdlr-core-zoom-on-hover">
-                                                        <a href="#"><img src="{{ asset('assets/upload/personnel-1-500x500.jpg') }}" alt="" width="200" height="200" title="personnel-2" /></a>
-                                                    </div>
-                                                    <div class="gdlr-core-personnel-list-content-wrap">
-                                                        <div class="gdlr-core-personnel-list-social">
-                                                            <div class="gdlr-core-social-network-item gdlr-core-item-pdb  gdlr-core-none-align" style="padding-bottom: 0px ;"><a href="#" target="_blank" class="gdlr-core-social-network-icon" title="facebook" style="font-size: 18px ;color: #50bd77 ;"><i class="fa fa-facebook" ></i></a><a href="#url" target="_blank" class="gdlr-core-social-network-icon" title="twitter" style="font-size: 18px ;color: #50bd77 ;margin-left: 14px ;"><i class="fa fa-twitter" ></i></a></div>
-                                                        </div>
-                                                        <h3 class="gdlr-core-personnel-list-title" style="font-size: 23px ;font-weight: 700 ;letter-spacing: 0px ;text-transform: none ;"><a href="#" >Sujit Wasti</a></h3>
-                                                        <div class="gdlr-core-personnel-list-position gdlr-core-info-font gdlr-core-skin-caption" style="font-size: 16px ;font-weight: 500 ;font-style: normal ;letter-spacing: 0px ;">Lecturer</div>
-                                                        <div class="gdlr-core-personnel-info">
-                                                            <div class="kingster-personnel-info-list kingster-type-email"><i class="kingster-personnel-info-list-icon fa fa-envelope-open"></i>sujit@shreecollage.com</div>
-
-                                                        </div>
-                                                        <div class="gdlr-core-personnel-list-content">
-                                                            <p>.</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="gdlr-core-personnel-list-column  gdlr-core-column-60 gdlr-core-column-first gdlr-core-item-pdlr">
-                                                <div class="gdlr-core-personnel-list clearfix">
-                                                    <div class="gdlr-core-personnel-list-image gdlr-core-media-image  gdlr-core-opacity-on-hover gdlr-core-zoom-on-hover">
-                                                        <a href="#"><img src="{{ asset('assets/upload/personnel-1-500x500.jpg') }}" alt="" width="200" height="200" title="personnel-2" /></a>
-                                                    </div>
-                                                    <div class="gdlr-core-personnel-list-content-wrap">
-                                                        <div class="gdlr-core-personnel-list-social">
-                                                            <div class="gdlr-core-social-network-item gdlr-core-item-pdb  gdlr-core-none-align" style="padding-bottom: 0px ;"><a href="#" target="_blank" class="gdlr-core-social-network-icon" title="facebook" style="font-size: 18px ;color: #50bd77 ;"><i class="fa fa-facebook" ></i></a><a href="#url" target="_blank" class="gdlr-core-social-network-icon" title="twitter" style="font-size: 18px ;color: #50bd77 ;margin-left: 14px ;"><i class="fa fa-twitter" ></i></a></div>
-                                                        </div>
-                                                        <h3 class="gdlr-core-personnel-list-title" style="font-size: 23px ;font-weight: 700 ;letter-spacing: 0px ;text-transform: none ;"><a href="#" >Shashi Giri</a></h3>
-                                                        <div class="gdlr-core-personnel-list-position gdlr-core-info-font gdlr-core-skin-caption" style="font-size: 16px ;font-weight: 500 ;font-style: normal ;letter-spacing: 0px ;">Lecturer</div>
-                                                        <div class="gdlr-core-personnel-info">
-                                                            <div class="kingster-personnel-info-list kingster-type-email"><i class="kingster-personnel-info-list-icon fa fa-envelope-open"></i>sujit@shreecollage.com</div>
-
-                                                        </div>
-                                                        <div class="gdlr-core-personnel-list-content">
-                                                            <p>&#8211; CIMA qualified</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-
-                                            <div class="gdlr-core-personnel-list-column  gdlr-core-column-60 gdlr-core-column-first gdlr-core-item-pdlr">
-                                                <div class="gdlr-core-personnel-list clearfix">
-                                                    <div class="gdlr-core-personnel-list-image gdlr-core-media-image  gdlr-core-opacity-on-hover gdlr-core-zoom-on-hover">
-                                                        <a href="#"><img src="{{ asset('assets/upload/personnel-1-500x500.jpg') }}" alt="" width="200" height="200" title="personnel-2" /></a>
-                                                    </div>
-                                                    <div class="gdlr-core-personnel-list-content-wrap">
-                                                        <div class="gdlr-core-personnel-list-social">
-                                                            <div class="gdlr-core-social-network-item gdlr-core-item-pdb  gdlr-core-none-align" style="padding-bottom: 0px ;"><a href="#" target="_blank" class="gdlr-core-social-network-icon" title="facebook" style="font-size: 18px ;color: #50bd77 ;"><i class="fa fa-facebook" ></i></a><a href="#url" target="_blank" class="gdlr-core-social-network-icon" title="twitter" style="font-size: 18px ;color: #50bd77 ;margin-left: 14px ;"><i class="fa fa-twitter" ></i></a></div>
-                                                        </div>
-                                                        <h3 class="gdlr-core-personnel-list-title" style="font-size: 23px ;font-weight: 700 ;letter-spacing: 0px ;text-transform: none ;"><a href="#" >Shashi Giri</a></h3>
-                                                        <div class="gdlr-core-personnel-list-position gdlr-core-info-font gdlr-core-skin-caption" style="font-size: 16px ;font-weight: 500 ;font-style: normal ;letter-spacing: 0px ;">Lecturer</div>
-                                                        <div class="gdlr-core-personnel-info">
-                                                            <div class="kingster-personnel-info-list kingster-type-email"><i class="kingster-personnel-info-list-icon fa fa-envelope-open"></i>sujit@shreecollage.com</div>
-
-                                                        </div>
-                                                        <div class="gdlr-core-personnel-list-content">
-                                                            <p>&#8211; B.S., Mechanics and Mathematics, Moscow State University</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="gdlr-core-personnel-list-column  gdlr-core-column-60 gdlr-core-column-first gdlr-core-item-pdlr">
-                                                <div class="gdlr-core-personnel-list clearfix">
-                                                    <div class="gdlr-core-personnel-list-image gdlr-core-media-image  gdlr-core-opacity-on-hover gdlr-core-zoom-on-hover">
-                                                        <a href="#"><img src="{{ asset('assets/upload/personnel-1-500x500.jpg') }}" alt="" width="200" height="200" title="personnel-2" /></a>
-                                                    </div>
-                                                    <div class="gdlr-core-personnel-list-content-wrap">
-                                                        <div class="gdlr-core-personnel-list-social">
-                                                            <div class="gdlr-core-social-network-item gdlr-core-item-pdb  gdlr-core-none-align" style="padding-bottom: 0px ;"><a href="#" target="_blank" class="gdlr-core-social-network-icon" title="facebook" style="font-size: 18px ;color: #50bd77 ;"><i class="fa fa-facebook" ></i></a><a href="#url" target="_blank" class="gdlr-core-social-network-icon" title="twitter" style="font-size: 18px ;color: #50bd77 ;margin-left: 14px ;"><i class="fa fa-twitter" ></i></a></div>
-                                                        </div>
-                                                        <h3 class="gdlr-core-personnel-list-title" style="font-size: 23px ;font-weight: 700 ;letter-spacing: 0px ;text-transform: none ;"><a href="#" >Sabin Dhakal</a></h3>
-                                                        <div class="gdlr-core-personnel-list-position gdlr-core-info-font gdlr-core-skin-caption" style="font-size: 16px ;font-weight: 500 ;font-style: normal ;letter-spacing: 0px ;">Lecturer</div>
-                                                        <div class="gdlr-core-personnel-info">
-                                                            <div class="kingster-personnel-info-list kingster-type-email"><i class="kingster-personnel-info-list-icon fa fa-envelope-open"></i>sabin@shreecollage.com</div>
-
-                                                        </div>
-                                                        <div class="gdlr-core-personnel-list-content">
-                                                            <p>&#8211; CGMA</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="gdlr-core-personnel-list-column  gdlr-core-column-60 gdlr-core-column-first gdlr-core-item-pdlr">
-                                                <div class="gdlr-core-personnel-list clearfix">
-                                                    <div class="gdlr-core-personnel-list-image gdlr-core-media-image  gdlr-core-opacity-on-hover gdlr-core-zoom-on-hover">
-                                                        <a href="#"><img src="{{ asset('assets/upload/personnel-1-500x500.jpg') }}" alt="" width="200" height="200" title="personnel-2" /></a>
-                                                    </div>
-                                                    <div class="gdlr-core-personnel-list-content-wrap">
-                                                        <div class="gdlr-core-personnel-list-social">
-                                                            <div class="gdlr-core-social-network-item gdlr-core-item-pdb  gdlr-core-none-align" style="padding-bottom: 0px ;"><a href="#" target="_blank" class="gdlr-core-social-network-icon" title="facebook" style="font-size: 18px ;color: #50bd77 ;"><i class="fa fa-facebook" ></i></a><a href="#url" target="_blank" class="gdlr-core-social-network-icon" title="twitter" style="font-size: 18px ;color: #50bd77 ;margin-left: 14px ;"><i class="fa fa-twitter" ></i></a></div>
-                                                        </div>
-                                                        <h3 class="gdlr-core-personnel-list-title" style="font-size: 23px ;font-weight: 700 ;letter-spacing: 0px ;text-transform: none ;"><a href="#" >Bijay Adhikari</a></h3>
-                                                        <div class="gdlr-core-personnel-list-position gdlr-core-info-font gdlr-core-skin-caption" style="font-size: 16px ;font-weight: 500 ;font-style: normal ;letter-spacing: 0px ;">Lecturer</div>
-                                                        <div class="gdlr-core-personnel-info">
-                                                            <div class="kingster-personnel-info-list kingster-type-email"><i class="kingster-personnel-info-list-icon fa fa-envelope-open"></i>bijay@shreecollage.com</div>
-
-                                                        </div>
-                                                        <div class="gdlr-core-personnel-list-content">
-                                                            <p>&#8211; CGMA</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="gdlr-core-personnel-list-column  gdlr-core-column-60 gdlr-core-column-first gdlr-core-item-pdlr">
-                                                <div class="gdlr-core-personnel-list clearfix">
-                                                    <div class="gdlr-core-personnel-list-image gdlr-core-media-image  gdlr-core-opacity-on-hover gdlr-core-zoom-on-hover">
-                                                        <a href="#"><img src="{{ asset('assets/upload/personnel-1-500x500.jpg') }}" alt="" width="200" height="200" title="personnel-2" /></a>
-                                                    </div>
-                                                    <div class="gdlr-core-personnel-list-content-wrap">
-                                                        <div class="gdlr-core-personnel-list-social">
-                                                            <div class="gdlr-core-social-network-item gdlr-core-item-pdb  gdlr-core-none-align" style="padding-bottom: 0px ;"><a href="#" target="_blank" class="gdlr-core-social-network-icon" title="facebook" style="font-size: 18px ;color: #50bd77 ;"><i class="fa fa-facebook" ></i></a><a href="#url" target="_blank" class="gdlr-core-social-network-icon" title="twitter" style="font-size: 18px ;color: #50bd77 ;margin-left: 14px ;"><i class="fa fa-twitter" ></i></a></div>
-                                                        </div>
-                                                        <h3 class="gdlr-core-personnel-list-title" style="font-size: 23px ;font-weight: 700 ;letter-spacing: 0px ;text-transform: none ;"><a href="#" >Rajendra Khuswaha</a></h3>
-                                                        <div class="gdlr-core-personnel-list-position gdlr-core-info-font gdlr-core-skin-caption" style="font-size: 16px ;font-weight: 500 ;font-style: normal ;letter-spacing: 0px ;">Lecturer</div>
-                                                        <div class="gdlr-core-personnel-info">
-                                                            <div class="kingster-personnel-info-list kingster-type-email"><i class="kingster-personnel-info-list-icon fa fa-envelope-open"></i>rajendra@shreecollage.com</div>
-
-                                                        </div>
-                                                        <div class="gdlr-core-personnel-list-content">
-                                                            <p>&#8211; FCCA</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="gdlr-core-personnel-list-column  gdlr-core-column-60 gdlr-core-column-first gdlr-core-item-pdlr">
-                                                <div class="gdlr-core-personnel-list clearfix">
-                                                    <div class="gdlr-core-personnel-list-image gdlr-core-media-image  gdlr-core-opacity-on-hover gdlr-core-zoom-on-hover">
-                                                        <a href="#"><img src="{{ asset('assets/upload/personnel-1-500x500.jpg') }}" alt="" width="200" height="200" title="personnel-2" /></a>
-                                                    </div>
-                                                    <div class="gdlr-core-personnel-list-content-wrap">
-                                                        <div class="gdlr-core-personnel-list-social">
-                                                            <div class="gdlr-core-social-network-item gdlr-core-item-pdb  gdlr-core-none-align" style="padding-bottom: 0px ;"><a href="#" target="_blank" class="gdlr-core-social-network-icon" title="facebook" style="font-size: 18px ;color: #50bd77 ;"><i class="fa fa-facebook" ></i></a><a href="#url" target="_blank" class="gdlr-core-social-network-icon" title="twitter" style="font-size: 18px ;color: #50bd77 ;margin-left: 14px ;"><i class="fa fa-twitter" ></i></a></div>
-                                                        </div>
-                                                        <h3 class="gdlr-core-personnel-list-title" style="font-size: 23px ;font-weight: 700 ;letter-spacing: 0px ;text-transform: none ;"><a href="#" >Suraj Shrestha</a></h3>
-                                                        <div class="gdlr-core-personnel-list-position gdlr-core-info-font gdlr-core-skin-caption" style="font-size: 16px ;font-weight: 500 ;font-style: normal ;letter-spacing: 0px ;">Lecturer</div>
-                                                        <div class="gdlr-core-personnel-info">
-                                                            <div class="kingster-personnel-info-list kingster-type-email"><i class="kingster-personnel-info-list-icon fa fa-envelope-open"></i>suraj@shrecollage.com</div>
-
-                                                        </div>
-                                                        <div class="gdlr-core-personnel-list-content">
-                                                            <p>&#8211; CA, practicing chartered accountant</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="gdlr-core-personnel-list-column  gdlr-core-column-60 gdlr-core-column-first gdlr-core-item-pdlr">
-                                                <div class="gdlr-core-personnel-list clearfix">
-                                                    <div class="gdlr-core-personnel-list-image gdlr-core-media-image  gdlr-core-opacity-on-hover gdlr-core-zoom-on-hover">
-                                                        <a href="#"><img src="{{ asset('assets/upload/personnel-1-500x500.jpg') }}" alt="" width="200" height="200" title="personnel-2" /></a>
-                                                    </div>
-                                                    <div class="gdlr-core-personnel-list-content-wrap">
-                                                        <div class="gdlr-core-personnel-list-social">
-                                                            <div class="gdlr-core-social-network-item gdlr-core-item-pdb  gdlr-core-none-align" style="padding-bottom: 0px ;"><a href="#" target="_blank" class="gdlr-core-social-network-icon" title="facebook" style="font-size: 18px ;color: #50bd77 ;"><i class="fa fa-facebook" ></i></a><a href="#url" target="_blank" class="gdlr-core-social-network-icon" title="twitter" style="font-size: 18px ;color: #50bd77 ;margin-left: 14px ;"><i class="fa fa-twitter" ></i></a></div>
-                                                        </div>
-                                                        <h3 class="gdlr-core-personnel-list-title" style="font-size: 23px ;font-weight: 700 ;letter-spacing: 0px ;text-transform: none ;"><a href="#" >David Bara</a></h3>
-                                                        <div class="gdlr-core-personnel-list-position gdlr-core-info-font gdlr-core-skin-caption" style="font-size: 16px ;font-weight: 500 ;font-style: normal ;letter-spacing: 0px ;">Lecturer</div>
-                                                        <div class="gdlr-core-personnel-info">
-                                                            <div class="kingster-personnel-info-list kingster-type-email"><i class="kingster-personnel-info-list-icon fa fa-envelope-open"></i>david@shreecollage.com</div>
-
-                                                        </div>
-                                                        <div class="gdlr-core-personnel-list-content">
-                                                            <p>&#8211; CIMA qualified</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="gdlr-core-personnel-list-column  gdlr-core-column-60 gdlr-core-column-first gdlr-core-item-pdlr">
-                                                <div class="gdlr-core-personnel-list clearfix">
-                                                    <div class="gdlr-core-personnel-list-image gdlr-core-media-image  gdlr-core-opacity-on-hover gdlr-core-zoom-on-hover">
-                                                        <a href="#"><img src="{{ asset('assets/upload/personnel-1-500x500.jpg') }}" alt="" width="200" height="200" title="personnel-2" /></a>
-                                                    </div>
-                                                    <div class="gdlr-core-personnel-list-content-wrap">
-                                                        <div class="gdlr-core-personnel-list-social">
-                                                            <div class="gdlr-core-social-network-item gdlr-core-item-pdb  gdlr-core-none-align" style="padding-bottom: 0px ;"><a href="#" target="_blank" class="gdlr-core-social-network-icon" title="facebook" style="font-size: 18px ;color: #50bd77 ;"><i class="fa fa-facebook" ></i></a><a href="#url" target="_blank" class="gdlr-core-social-network-icon" title="twitter" style="font-size: 18px ;color: #50bd77 ;margin-left: 14px ;"><i class="fa fa-twitter" ></i></a></div>
-                                                        </div>
-                                                        <h3 class="gdlr-core-personnel-list-title" style="font-size: 23px ;font-weight: 700 ;letter-spacing: 0px ;text-transform: none ;"><a href="#" >Kripesh Shrestha</a></h3>
-                                                        <div class="gdlr-core-personnel-list-position gdlr-core-info-font gdlr-core-skin-caption" style="font-size: 16px ;font-weight: 500 ;font-style: normal ;letter-spacing: 0px ;">Lecturer</div>
-                                                        <div class="gdlr-core-personnel-info">
-                                                            <div class="kingster-personnel-info-list kingster-type-email"><i class="kingster-personnel-info-list-icon fa fa-envelope-open"></i>kripesh@shrecollage.com</div>
-
-                                                        </div>
-                                                        <div class="gdlr-core-personnel-list-content">
-                                                            <p>&#8211; LLB</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
 
                                         </div>
                                     </div>
 
-                                    
+
                                 </div>
                             </div>
                             <div class="gdlr-core-pbf-sidebar-right gdlr-core-column-extend-right  kingster-sidebar-area gdlr-core-column-20 gdlr-core-pbf-sidebar-padding  gdlr-core-line-height" style="padding: 40px 0px 30px 0px;">
-                          
+
                             @include('public/layouts/sidebarNews') ;
-                              
+
                             </div>
                         </div>
                     </div>
 
 
-                    
+
                 </div>
 
-                               
+
             </div>
 
-          
+
             @include('public/layouts/socialFooter')
 
-            @include('public/layouts/partnersFooter') 
+            @include('public/layouts/partnersFooter')
 
 
             <footer>
 
-            @include('public/layouts/footer') 
+            @include('public/layouts/footer')
 
             </footer>
         </div>
