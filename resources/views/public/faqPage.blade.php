@@ -10,9 +10,9 @@
 
         </div>
         <header class="kingster-header-wrap kingster-header-style-plain kingster-style-menu-right kingster-sticky-navigation kingster-style-fixed" data-navigation-offset="75px" >
-        
+
         @include('public/layouts/header') ;
-        
+
         </header>
 
         <div class="kingster-page-title-wrap kingster-style-medium kingster-left-align" >
@@ -103,42 +103,16 @@
                                       class="gdlr-core-accordion-item-content"
                                     >
                                       <p>
-                                        Lorem Ipsum is simply dummy text of the
-                                        printing and typesetting industry. Lorem
-                                        Ipsum has been the industry's standard
-                                        dummy text ever since the 1500s, when an
-                                        unknown printer took a galley of type
-                                        and scrambled it to make a type specimen
-                                        book. It has survived not only five
-                                        centuries, but also the leap into
-                                        electronic typesetting, remaining
-                                        essentially unchanged. It was
-                                        popularised in the 1960s with the
-                                        release of Letraset sheets containing
-                                        Lorem Ipsum passages, and more recently
-                                        with desktop publishing software like
-                                        Aldus PageMaker including versions of
-                                        Lorem Ipsum.Why do we use it?
+                                          <ul>
+                                        <li>The first registered tuition provider for CIMA in Nepal with remarkable pass Rate.
+                                        </li>
+                                        <li>Central location i.e. Minbhawan, New Baneshwor</li>
+                                        <li>Free of Cost BBS from TU along with CIMA/ ACCA</li>
+                                          </ul>
+
+
                                       </p>
-                                      <p>
-                                        It is a long established fact that a
-                                        reader will be distracted by the
-                                        readable content of a page when looking
-                                        at its layout. The point of using Lorem
-                                        Ipsum is that it has a more-or-less
-                                        normal distribution of letters, as
-                                        opposed to using 'Content here, content
-                                        here', making it look like readable
-                                        English. Many desktop publishing
-                                        packages and web page editors now use
-                                        Lorem Ipsum as their default model text,
-                                        and a search for 'lorem ipsum' will
-                                        uncover many web sites still in their
-                                        infancy. Various versions have evolved
-                                        over the years, sometimes by accident,
-                                        sometimes on purpose (injected humour
-                                        and the like).
-                                      </p>
+
                                     </div>
                                   </div>
                                 </div>
@@ -154,48 +128,15 @@
                                     <h4
                                       class="gdlr-core-accordion-item-title gdlr-core-js gdlr-core-skin-e-background gdlr-core-skin-e-content"
                                     >
-                                      Why ACCA at shree collage ?
+                                    Is Cost affordable at Shree College?
                                     </h4>
                                     <div
                                       class="gdlr-core-accordion-item-content"
                                     >
                                       <p>
-                                        Lorem Ipsum is simply dummy text of the
-                                        printing and typesetting industry. Lorem
-                                        Ipsum has been the industry's standard
-                                        dummy text ever since the 1500s, when an
-                                        unknown printer took a galley of type
-                                        and scrambled it to make a type specimen
-                                        book. It has survived not only five
-                                        centuries, but also the leap into
-                                        electronic typesetting, remaining
-                                        essentially unchanged. It was
-                                        popularised in the 1960s with the
-                                        release of Letraset sheets containing
-                                        Lorem Ipsum passages, and more recently
-                                        with desktop publishing software like
-                                        Aldus PageMaker including versions of
-                                        Lorem Ipsum.Why do we use it?
+                                        Yes, it is affordable and we also provide scholarships to deserving candidates.
                                       </p>
-                                      <p>
-                                        It is a long established fact that a
-                                        reader will be distracted by the
-                                        readable content of a page when looking
-                                        at its layout. The point of using Lorem
-                                        Ipsum is that it has a more-or-less
-                                        normal distribution of letters, as
-                                        opposed to using 'Content here, content
-                                        here', making it look like readable
-                                        English. Many desktop publishing
-                                        packages and web page editors now use
-                                        Lorem Ipsum as their default model text,
-                                        and a search for 'lorem ipsum' will
-                                        uncover many web sites still in their
-                                        infancy. Various versions have evolved
-                                        over the years, sometimes by accident,
-                                        sometimes on purpose (injected humour
-                                        and the like).
-                                      </p>
+
                                     </div>
                                   </div>
                                 </div>
@@ -211,166 +152,77 @@
                                     <h4
                                       class="gdlr-core-accordion-item-title gdlr-core-js gdlr-core-skin-e-background gdlr-core-skin-e-content"
                                     >
-                                      What ACCA eligibility to study ACCA?
+                                    How is Management of Shree College?
                                     </h4>
                                     <div
                                       class="gdlr-core-accordion-item-content"
                                     >
                                       <p>
-                                        Lorem Ipsum is simply dummy text of the
-                                        printing and typesetting industry. Lorem
-                                        Ipsum has been the industry's standard
-                                        dummy text ever since the 1500s, when an
-                                        unknown printer took a galley of type
-                                        and scrambled it to make a type specimen
-                                        book. It has survived not only five
-                                        centuries, but also the leap into
-                                        electronic typesetting, remaining
-                                        essentially unchanged. It was
-                                        popularised in the 1960s with the
-                                        release of Letraset sheets containing
-                                        Lorem Ipsum passages, and more recently
-                                        with desktop publishing software like
-                                        Aldus PageMaker including versions of
-                                        Lorem Ipsum.Why do we use it?
+                                        We are in our fifth year of successful operation and all the management team is highly professionals to guide the candidate in building their career.
                                       </p>
-                                      <p>
-                                        It is a long established fact that a
-                                        reader will be distracted by the
-                                        readable content of a page when looking
-                                        at its layout. The point of using Lorem
-                                        Ipsum is that it has a more-or-less
-                                        normal distribution of letters, as
-                                        opposed to using 'Content here, content
-                                        here', making it look like readable
-                                        English. Many desktop publishing
-                                        packages and web page editors now use
-                                        Lorem Ipsum as their default model text,
-                                        and a search for 'lorem ipsum' will
-                                        uncover many web sites still in their
-                                        infancy. Various versions have evolved
-                                        over the years, sometimes by accident,
-                                        sometimes on purpose (injected humour
-                                        and the like).
-                                      </p>
+
                                     </div>
                                   </div>
                                 </div>
-                                <div
-                                  class="gdlr-core-accordion-item-tab clearfix"
-                                >
-                                  <div
-                                    class="gdlr-core-accordion-item-icon gdlr-core-js gdlr-core-skin-icon"
-                                  ></div>
-                                  <div
-                                    class="gdlr-core-accordion-item-content-wrapper"
-                                  >
-                                    <h4
-                                      class="gdlr-core-accordion-item-title gdlr-core-js gdlr-core-skin-e-background gdlr-core-skin-e-content"
-                                    >
-                                      Why CIMA at shree collage ?
+                                <div  class="gdlr-core-accordion-item-tab clearfix" >
+                                  <div class="gdlr-core-accordion-item-icon gdlr-core-js gdlr-core-skin-icon"></div>
+                                  <div class="gdlr-core-accordion-item-content-wrapper"  >
+                                    <h4 class="gdlr-core-accordion-item-title gdlr-core-js gdlr-core-skin-e-background gdlr-core-skin-e-content" >
+                                    Is Shree college authorized to provide CIMA/ ACCA in Nepal?
                                     </h4>
-                                    <div
-                                      class="gdlr-core-accordion-item-content"
-                                    >
+                                    <div   class="gdlr-core-accordion-item-content"  >
                                       <p>
-                                        Lorem Ipsum is simply dummy text of the
-                                        printing and typesetting industry. Lorem
-                                        Ipsum has been the industry's standard
-                                        dummy text ever since the 1500s, when an
-                                        unknown printer took a galley of type
-                                        and scrambled it to make a type specimen
-                                        book. It has survived not only five
-                                        centuries, but also the leap into
-                                        electronic typesetting, remaining
-                                        essentially unchanged. It was
-                                        popularised in the 1960s with the
-                                        release of Letraset sheets containing
-                                        Lorem Ipsum passages, and more recently
-                                        with desktop publishing software like
-                                        Aldus PageMaker including versions of
-                                        Lorem Ipsum.Why do we use it?
+                                         Yes, Shree College is registered tuition provider for CIMA and silver learning partner for ACCA.
                                       </p>
-                                      <p>
-                                        It is a long established fact that a
-                                        reader will be distracted by the
-                                        readable content of a page when looking
-                                        at its layout. The point of using Lorem
-                                        Ipsum is that it has a more-or-less
-                                        normal distribution of letters, as
-                                        opposed to using 'Content here, content
-                                        here', making it look like readable
-                                        English. Many desktop publishing
-                                        packages and web page editors now use
-                                        Lorem Ipsum as their default model text,
-                                        and a search for 'lorem ipsum' will
-                                        uncover many web sites still in their
-                                        infancy. Various versions have evolved
-                                        over the years, sometimes by accident,
-                                        sometimes on purpose (injected humour
-                                        and the like).
-                                      </p>
+
                                     </div>
                                   </div>
                                 </div>
 
-                                <div
-                                  class="gdlr-core-accordion-item-tab clearfix"
-                                >
-                                  <div
-                                    class="gdlr-core-accordion-item-icon gdlr-core-js gdlr-core-skin-icon"
-                                  ></div>
-                                  <div
-                                    class="gdlr-core-accordion-item-content-wrapper"
-                                  >
-                                    <h4
-                                      class="gdlr-core-accordion-item-title gdlr-core-js gdlr-core-skin-e-background gdlr-core-skin-e-content"
-                                    >
-                                      What are eligibility to study CIMA ?
+                                <div class="gdlr-core-accordion-item-tab clearfix" >
+                                  <div  class="gdlr-core-accordion-item-icon gdlr-core-js gdlr-core-skin-icon" ></div>
+                                  <div  class="gdlr-core-accordion-item-content-wrapper" >
+                                    <h4  class="gdlr-core-accordion-item-title gdlr-core-js gdlr-core-skin-e-background gdlr-core-skin-e-content" >
+                                    Are the faculty well equipped and experienced in handling CIMA/ACCA students?
                                     </h4>
-                                    <div
-                                      class="gdlr-core-accordion-item-content"
-                                    >
+                                    <div  class="gdlr-core-accordion-item-content">
                                       <p>
-                                        Lorem Ipsum is simply dummy text of the
-                                        printing and typesetting industry. Lorem
-                                        Ipsum has been the industry's standard
-                                        dummy text ever since the 1500s, when an
-                                        unknown printer took a galley of type
-                                        and scrambled it to make a type specimen
-                                        book. It has survived not only five
-                                        centuries, but also the leap into
-                                        electronic typesetting, remaining
-                                        essentially unchanged. It was
-                                        popularised in the 1960s with the
-                                        release of Letraset sheets containing
-                                        Lorem Ipsum passages, and more recently
-                                        with desktop publishing software like
-                                        Aldus PageMaker including versions of
-                                        Lorem Ipsum.Why do we use it?
+                                        Yes, All our faculty (national & international) are well experienced and professionally qualified.
                                       </p>
-                                      <p>
-                                        It is a long established fact that a
-                                        reader will be distracted by the
-                                        readable content of a page when looking
-                                        at its layout. The point of using Lorem
-                                        Ipsum is that it has a more-or-less
-                                        normal distribution of letters, as
-                                        opposed to using 'Content here, content
-                                        here', making it look like readable
-                                        English. Many desktop publishing
-                                        packages and web page editors now use
-                                        Lorem Ipsum as their default model text,
-                                        and a search for 'lorem ipsum' will
-                                        uncover many web sites still in their
-                                        infancy. Various versions have evolved
-                                        over the years, sometimes by accident,
-                                        sometimes on purpose (injected humour
-                                        and the like).
-                                      </p>
+
                                     </div>
                                   </div>
                                 </div>
+
+                                <div class="gdlr-core-accordion-item-tab clearfix" >
+                                    <div  class="gdlr-core-accordion-item-icon gdlr-core-js gdlr-core-skin-icon" ></div>
+                                    <div  class="gdlr-core-accordion-item-content-wrapper" >
+                                      <h4  class="gdlr-core-accordion-item-title gdlr-core-js gdlr-core-skin-e-background gdlr-core-skin-e-content" >
+                                        Is there any credit transfer facility if students wish to go abroad.?
+                                      </h4>
+                                      <div  class="gdlr-core-accordion-item-content">
+                                        <p>
+                                           Yes, we have list of colleges like UCLAN (University of Central Lancashire), UK for our students to continue their further studies from any level of CIMA/ACCA.
+                                        </p>
+
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                  <div class="gdlr-core-accordion-item-tab clearfix" >
+                                    <div  class="gdlr-core-accordion-item-icon gdlr-core-js gdlr-core-skin-icon" ></div>
+                                    <div  class="gdlr-core-accordion-item-content-wrapper" >
+                                      <h4  class="gdlr-core-accordion-item-title gdlr-core-js gdlr-core-skin-e-background gdlr-core-skin-e-content" >
+                                        What are the extra curriculum activities at Shree College.?
+                                      </h4>
+                                      <div  class="gdlr-core-accordion-item-content">
+                                        <p>
+                                            We have a full list of extra curriculum activities that not only energize students but also help students to work on their soft skills required by the employers.
+                                        </p>
+
+                                      </div>
+                                    </div>
+                                  </div>
                               </div>
                             </div>
                           </div>
@@ -383,18 +235,18 @@
               <div class="kingster-sidebar-right kingster-column-20 kingster-line-height kingster-line-height" >
 
 
-                @include('public/layouts/sidebar') 
+                @include('public/layouts/sidebar')
 
               </div>
             </div>
 
 
-                   
+
           </div>
-      
+
           @include('public/layouts/socialFooter')
 
-          @include('public/layouts/partnersFooter') 
+          @include('public/layouts/partnersFooter')
 
         <footer>
              @include('public/layouts/footer')
