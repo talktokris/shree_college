@@ -6,7 +6,7 @@
                                     <p><img src="{{ asset('assets/upload/footer-logo.png') }}" alt="" class="ftr-logo" />
                                         <br /> <span class="gdlr-core-space-shortcode" id="span_1dd7_10"></span>
                                         Shree College of management is a dynamic, innovative and quality oriented educational institution offering the students a world class education by providing
-                                        learning experience designed to develop intellectual abilities   <br> <a class="gdlr-core-excerpt-read-more gdlr-core-button gdlr-core-rectangle" href="#">Read More</a></p>
+                                        learning experience designed to develop intellectual abilities   <br> <a class="gdlr-core-excerpt-read-more gdlr-core-button gdlr-core-rectangle" href="{{ url('/about-shree')}}">Read More</a></p>
 
                                     <div class="gdlr-core-divider-item gdlr-core-divider-item-normal gdlr-core-left-align">
                                         <div class="gdlr-core-divider-line gdlr-core-skin-divider" id="div_1dd7_111"></div>
@@ -19,16 +19,16 @@
                                 <h3 class="kingster-widget-title">Quick Links</h3><span class="clear"></span>
                                 <div class="menu-our-campus-container">
 
-                                <div class="tagcloud"><a href="#" class="tag-cloud-link tag-link-7 tag-link-position-1" style="font-size: 12.2pt;" aria-label="Admission (2 items)">Home</a>
-                                <a href="#" class="tag-cloud-link tag-link-5 tag-link-position-2" style="font-size: 8pt;" aria-label="Article (1 item)">About Shree College</a>
-                                <a href="#" class="tag-cloud-link tag-link-14 tag-link-position-3" style="font-size: 12.2pt;" aria-label="Event (2 items)">Shree College Team</a>
-                                <a href="#" class="tag-cloud-link tag-link-103 tag-link-position-4" style="font-size: 8pt;" aria-label="Hot (1 item)">ACCA</a>
-                                 <a href="#" class="tag-cloud-link tag-link-10 tag-link-position-5" style="font-size: 12.2pt;" aria-label="News (2 items)">CIMA</a>
-                                  <a href="#" class="tag-cloud-link tag-link-12 tag-link-position-6" style="font-size: 22pt;" aria-label="Post Format (7 items)"> Gallery</a>
-                                  <a href="#" class="tag-cloud-link tag-link-6 tag-link-position-7" style="font-size: 15pt;" aria-label="Research (3 items)">NEWS</a>
-                                  <a href="#" class="tag-cloud-link tag-link-9 tag-link-position-8" style="font-size: 8pt;" aria-label="Social (1 item)">Faq</a>
-                                  <a href="#" class="tag-cloud-link tag-link-13 tag-link-position-9" style="font-size: 8pt;" aria-label="Sport (1 item)">Inquiry</a>
-                                  <a href="#" class="tag-cloud-link tag-link-8 tag-link-position-10" style="font-size: 12.2pt;" aria-label="Student (2 items)">Contact</a>
+                                <div class="tagcloud"><a href="{{ url('/')}}" class="tag-cloud-link tag-link-7 tag-link-position-1" style="font-size: 12.2pt;" aria-label="Admission (2 items)">Home</a>
+                                <a href="{{ url('/about-shree')}}" class="tag-cloud-link tag-link-5 tag-link-position-2" style="font-size: 8pt;" aria-label="Article (1 item)">About Shree College</a>
+                                <a href="{{ url('/shree-team')}}" class="tag-cloud-link tag-link-14 tag-link-position-3" style="font-size: 12.2pt;" aria-label="Event (2 items)">Shree College Team</a>
+                                <a href="{{ url('/acca')}}" class="tag-cloud-link tag-link-103 tag-link-position-4" style="font-size: 8pt;" aria-label="Hot (1 item)">ACCA</a>
+                                 <a href="{{ url('/cima')}}" class="tag-cloud-link tag-link-10 tag-link-position-5" style="font-size: 12.2pt;" aria-label="News (2 items)">CIMA</a>
+                                  <a href="{{ url('/gallery')}}" class="tag-cloud-link tag-link-12 tag-link-position-6" style="font-size: 22pt;" aria-label="Post Format (7 items)"> Gallery</a>
+                                  <a href="{{ url('/news')}}" class="tag-cloud-link tag-link-6 tag-link-position-7" style="font-size: 15pt;" aria-label="Research (3 items)">NEWS</a>
+                                  <a href="{{ url('/faq') }}" class="tag-cloud-link tag-link-9 tag-link-position-8" style="font-size: 8pt;" aria-label="Social (1 item)">Faq</a>
+                                  <a href="{{ url('/inquiry')}}" class="tag-cloud-link tag-link-13 tag-link-position-9" style="font-size: 8pt;" aria-label="Sport (1 item)">Inquiry</a>
+                                  <a href="{{ url('/contact')}}" class="tag-cloud-link tag-link-8 tag-link-position-10" style="font-size: 12.2pt;" aria-label="Student (2 items)">Contact</a>
 
 
                                  </div>
