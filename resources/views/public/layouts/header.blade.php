@@ -9,35 +9,35 @@
                         <div class="kingster-navigation kingster-item-pdlr clearfix ">
                             <div class="kingster-main-menu" id="kingster-main-menu">
                                 <ul id="menu-main-navigation-1" class="sf-menu">
-                                <li class="menu-item current-menu-item"><a href="{{ url('/') }}"  class="sf-with-ul-pre">Home</a></li>   
-                    
+                                <li class="menu-item current-menu-item"><a href="{{ url('/') }}"  class="sf-with-ul-pre">Home</a></li>
+
                                     <li class="menu-item menu-item-has-children kingster-normal-menu"><a href="#" class="sf-with-ul-pre">Shree College</a>
                                         <ul class="sub-menu">
                                             <li class="menu-item" data-size="60"><a href="{{ url('/about-shree') }}">About Shree College</a></li>
-                                            
+
                                             <li class="menu-item" data-size="60"><a href="{{ url('/shree-team') }}">Our Experienced Team</a></li>
                                             <li class="menu-item" data-size="60"><a href="{{ url('/shree-certification') }}">Certification & Licenses</a></li>
-           
+
                                         </ul>
                                     </li>
 
-                                    
+
 
                                     <li class="menu-item menu-item-has-children kingster-normal-menu"><a href="#" class="sf-with-ul-pre">Courses</a>
                                         <ul class="sub-menu">
-                                            <li class="menu-item" data-size="60"><a href="{{ url('/cima') }}">CIMA - Chartered Institute Of Management Accountants</a></li>
-                                            <li class="menu-item" data-size="60"><a href="{{ url('/acca') }}">ACCA -The Association of Chartered Certified Accountants</a></li>
-                                          
-           
+                                            <li class="menu-item" data-size="60"><a href="{{ url('/cima') }}"><img src="{{ asset('assets/images/menu-icon-cima.png') }}" class="menu-icon-img">CIMA - Chartered Institute Of Management Accountants</a></li>
+                                            <li class="menu-item" data-size="60"><a href="{{ url('/acca') }}"><img src="{{ asset('assets/images/menu-icon-acca.png') }}" class="menu-icon-img">ACCA -The Association of Chartered Certified Accountants</a></li>
+
+
                                         </ul>
                                     </li>
                                     <li class="menu-item"><a href="{{ url('/news') }}" class="sf-with-ul-pre">News</a></li>
-                                    <li class="menu-item"><a href="{{ url('/gallery') }}"  class="sf-with-ul-pre">Gallery</a></li> 
-                                    <li class="menu-item"><a href="{{ url('/faq') }}"  class="sf-with-ul-pre">Faq</a></li> 
-                                    <li class="menu-item"><a href="{{ url('/inquiry') }}"  class="sf-with-ul-pre">Inquiry</a></li> 
-                                    <li class="menu-item"><a href="{{ url('/contact') }}"  class="sf-with-ul-pre">Contact</a></li> 
-                                   
-   
+                                    <li class="menu-item"><a href="{{ url('/gallery') }}"  class="sf-with-ul-pre">Gallery</a></li>
+                                    <li class="menu-item"><a href="{{ url('/faq') }}"  class="sf-with-ul-pre">FAQs</a></li>
+                                    <li class="menu-item"><a href="{{ url('/inquiry') }}"  class="sf-with-ul-pre">Inquiry</a></li>
+                                    <li class="menu-item"><a href="{{ url('/contact') }}"  class="sf-with-ul-pre">Contact</a></li>
+
+
                                 </ul>
                                 <div class="kingster-navigation-slide-bar" id="kingster-navigation-slide-bar"></div>
                             </div>

@@ -44,7 +44,7 @@
 
 
 
-                                    
+
 
                                     <div class="gdlr-core-pbf-element">
                                         <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 40px ;">
@@ -59,19 +59,19 @@
 
                                     <div class="gdlr-core-pbf-element">
                                         <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 40px ;">
-                                          
+
 
                                             <div class="gdlr-core-blog-thumbnail gdlr-core-media-image  gdlr-core-opacity-on-hover gdlr-core-zoom-on-hover">
-                                                            <img src="{{ asset('assets/upload/acca_image.jpg') }}" alt="" width="1100" height="490" style="  border: 1px solid #3db166 !important;">
+                                                            <img src="{{ asset('assets/images/acca_image.jpg') }}" alt="" width="1100" height="490" style="  border: 1px solid #3db166 !important;">
                                             </div>
-                                           
+
                                         </div>
                                     </div>
 
                                     <div class="gdlr-core-pbf-element">
                                         <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 40px ;">
-                                            
-                                         
+
+
                                             <div class="gdlr-core-text-box-item-content" style="font-size: 16px ;text-transform: none ;">
                                                 <p>The association of chartered certified accountants (ACCA) is globally recognized professional qualification introduced in 1904. It is largest and fastest growing accountancy body for professional accountants in the world.</p>
                                             </div>
@@ -80,7 +80,7 @@
 
 
 
-                                 
+
                                     <div class="gdlr-core-pbf-column gdlr-core-column-20 gdlr-core-column-first">
                                         <div class="gdlr-core-pbf-column-content-margin gdlr-core-js " style="margin: 0px -7px 0px 0px;">
                                             <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js ">
@@ -292,7 +292,7 @@
 
                     @include('public/layouts/socialFooter')
 
-                    @include('public/layouts/partnersFooter') 
+                    @include('public/layouts/partnersFooter')
 
 
 

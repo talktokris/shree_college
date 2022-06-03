@@ -1012,6 +1012,10 @@ padding: 1em;
   .kingster-top-bar {
     padding-bottom: 0px !important;
   }
+  .menu-icon-img{
+      width: 40px !important;
+      margin-right: 25px;
+  }
 
 
 

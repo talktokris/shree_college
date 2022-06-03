@@ -59,7 +59,7 @@
 
     @yield('contents')
 
-   
+
 
 
 
@@ -72,8 +72,8 @@
     <script type="text/javascript" src="{{ asset('assets/plugins/revslider/public/assets/js/extensions/revolution.extension.layeranimation.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/plugins/revslider/public/assets/js/extensions/revolution.extension.kenburn.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/plugins/revslider/public/assets/js/extensions/revolution.extension.navigation.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/plugins/revslider/public/assets/js/extensions/revolution.extension.parallax.min.js') }}"></script>  
-    <script type="text/javascript" src="{{ asset('assets/plugins/revslider/public/assets/js/extensions/revolution.extension.actions.min.js') }}"></script> 
+    <script type="text/javascript" src="{{ asset('assets/plugins/revslider/public/assets/js/extensions/revolution.extension.parallax.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/plugins/revslider/public/assets/js/extensions/revolution.extension.actions.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/plugins/revslider/public/assets/js/extensions/revolution.extension.video.min.js') }}"></script>
 
     <script type='text/javascript' src="{{ asset('assets/plugins/goodlayers-core/plugins/combine/script.js') }}"></script>
@@ -82,7 +82,22 @@
     <script type='text/javascript' src="{{ asset('assets/js/custom.js') }}"></script>
     <script type='text/javascript' src="{{ asset('assets/plugins/goodlayers-core/include/js/page-builder.js') }}"></script>
 
+<!-- GetButton.io widget -->
+<script type="text/javascript">
+    (function () {
+        var options = {
+            whatsapp: "+9779819857575", // WhatsApp number
+            call_to_action: "Message us", // Call to action
+            button_color: "#FF6550", // Color of button
+            position: "right", // Position may be 'right' or 'left'
+        };
+        var proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
+        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+        s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+        var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+    })();
+</script>
+<!-- /GetButton.io widget -->
 
-	
 </body>
 </html>

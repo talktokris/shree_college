@@ -6,23 +6,23 @@
 <div class="kingster-body-outer-wrapper ">
         <div class="kingster-body-wrapper clearfix  kingster-with-frame">
 
-    
+
             <div class="kingster-top-bar">
 
             @include('public/layouts/headerTop') ;
-          
+
             </div>
             <header class="kingster-header-wrap kingster-header-style-plain  kingster-style-menu-right kingster-sticky-navigation kingster-style-fixed" data-navigation-offset="75px">
-          
+
             @include('public/layouts/header') ;
-           
+
             </header>
 
 
-           
 
 
-    
+
+
 
             <div class="kingster-breadcrumbs bd_nav">
                         <div class="kingster-breadcrumbs-container kingster-container">
@@ -58,19 +58,19 @@
 
                                     <div class="gdlr-core-pbf-element">
                                         <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 40px ;">
-                                          
+
 
                                             <div class="gdlr-core-blog-thumbnail gdlr-core-media-image  gdlr-core-opacity-on-hover gdlr-core-zoom-on-hover">
-                                                            <img src="{{ asset('assets/upload/shutterstock_106223549-800x356.jpg') }}" alt="" width="1100" height="490"  style="  border: 1px solid #3db166 !important;">
+                                                            <img src="{{ asset('assets/images/cima_image_banner.jpg') }}" alt="" width="1100" height="490"  style="  border: 1px solid #3db166 !important;">
                                             </div>
-                                           
+
                                         </div>
                                     </div>
 
                                     <div class="gdlr-core-pbf-element">
                                         <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 40px ;">
-                                            
-                                         
+
+
                                             <div class="gdlr-core-text-box-item-content" style="font-size: 16px ;text-transform: none ;">
                                             <p>Chartered Institute of Management Accountants (CIMA), the world’s leading and largest professional body of management accountants, with over 550000+ students and member spread across 180+ countries worldwide.</p>
                                             <p>This global body for professional accountants is the ideal study route for students who are searching to pursue a rewarding career in accountancy, management, and finance, getting opportunities to interesting roles all over the world. The qualification is designed to teach skills for providing strategic advice, managing risk, financial strategy, management accounting, costing and budgeting and making key decisions for sustainable success of the organization. Join the global network with this relevant qualification and become a future ready finance professional that is sought-after to shape the future of business and accountancy.</p>
@@ -78,9 +78,9 @@
                                         </div>
                                     </div>
 
-                        
 
-                              
+
+
                                     <div class="gdlr-core-pbf-element">
                                                 <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 40px ;">
                                                     <div class="gdlr-core-title-item-title-wrap clearfix">
@@ -89,7 +89,7 @@
                                     </div>
                                     <div class="gdlr-core-pbf-element">
                                         <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 40px ;">
-    
+
                                             <div class="gdlr-core-text-box-item-content" style="font-size: 16px ;text-transform: none ;">
                                                 <p>Welcome to the world of management accounting, a profession where the opportunities are as open-ended as you want them to be..</p>
                                                 <p>Officially, management accountants help businesses all over the world manage their finances. But in reality, there’s so much more to it than that. They are business leaders, Innovators, Decision makers, Forecasters. There’s no one industry or role that they work in: you’ll find management accountants in all kinds of companies, public and private, big and small.</p>
@@ -104,14 +104,14 @@
 
                                     <div class="gdlr-core-pbf-element">
                                         <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" style="padding-bottom: 15px ;">
-             
+
                                             <div class="gdlr-core-text-box-item-content" style="font-size: 21px ;text-transform: none ;color: #3db166 ;">
                                                 <p>How do I become a management accountant? </p>
                                             </div>
                                         </div>
                                     </div>
 
-                               
+
 
                                     <div class="gdlr-core-pbf-element">
                                         <div class="gdlr-core-divider-item gdlr-core-divider-item-normal gdlr-core-item-pdlr gdlr-core-center-align">
@@ -138,12 +138,12 @@
                                                             <div class="gdlr-core-head">Course Duration :</div>
                                                             <div class="gdlr-core-tail">: CIMA qualification takes 4 years (approx.) to complete.</div>
                                                         </div>
-                                                      
-                                                    
+
+
                                                     </div>
                                                 </div>
                                             </div>
-                                              
+
                                             </div>
                                         </div>
                                     </div>
@@ -157,7 +157,7 @@
                                                         <h3 class="gdlr-core-title-item-title gdlr-core-skin-title " style="font-size: 20px ;font-weight: 600 ;">CIMA Assessments</h3></div>
                                                 </div>
                                             </div>
-                                           
+
                                                  <ul>
                                                 <li class=" gdlr-core-skin-divider" style="margin-bottom: 22px ;"><span class="gdlr-core-icon-list-icon-wrap" style="margin-top: 5px ;"><i class="gdlr-core-icon-list-icon fa fa-hand-o-right" style="color: #f82249 ;font-size: 22px ;width: 22px ;"></i></span>
                                                     <div class="gdlr-core-icon-list-content-wrap"><span class="gdlr-core-icon-list-content" style="font-size: 17px ;"><strong>CBA LEVEL</strong> Students are assessed using computer-based testing with multiple-choice questions. Each test typically lasts for 2 hours and they are available to be taken throughout the year.</span></div>
@@ -183,12 +183,12 @@
 
 
 
-                        
 
 
 
 
-                              
+
+
                                 </div>
                             </div>
                             <div class="gdlr-core-pbf-sidebar-right gdlr-core-column-extend-right  kingster-sidebar-area gdlr-core-column-20 gdlr-core-pbf-sidebar-padding  gdlr-core-line-height" style="padding: 35px 0px 30px 0px;">
@@ -200,26 +200,26 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     @include('public/layouts/socialFooter')
 
-                    @include('public/layouts/partnersFooter') 
+                    @include('public/layouts/partnersFooter')
 
 
 
-             
+
                 </div>
             </div>
 
 
-     
 
-          
+
+
 
             <footer>
-                
+
             @include('public/layouts/footer') ;
-            
+
             </footer>
         </div>
     </div>

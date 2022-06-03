@@ -26,7 +26,7 @@
                                  <a href="{{ url('/cima')}}" class="tag-cloud-link tag-link-10 tag-link-position-5" style="font-size: 12.2pt;" aria-label="News (2 items)">CIMA</a>
                                   <a href="{{ url('/gallery')}}" class="tag-cloud-link tag-link-12 tag-link-position-6" style="font-size: 22pt;" aria-label="Post Format (7 items)"> Gallery</a>
                                   <a href="{{ url('/news')}}" class="tag-cloud-link tag-link-6 tag-link-position-7" style="font-size: 15pt;" aria-label="Research (3 items)">NEWS</a>
-                                  <a href="{{ url('/faq') }}" class="tag-cloud-link tag-link-9 tag-link-position-8" style="font-size: 8pt;" aria-label="Social (1 item)">Faq</a>
+                                  <a href="{{ url('/faq') }}" class="tag-cloud-link tag-link-9 tag-link-position-8" style="font-size: 8pt;" aria-label="Social (1 item)">FAQs</a>
                                   <a href="{{ url('/inquiry')}}" class="tag-cloud-link tag-link-13 tag-link-position-9" style="font-size: 8pt;" aria-label="Sport (1 item)">Inquiry</a>
                                   <a href="{{ url('/contact')}}" class="tag-cloud-link tag-link-8 tag-link-position-10" style="font-size: 12.2pt;" aria-label="Student (2 items)">Contact</a>
 
@@ -42,6 +42,11 @@
 
 
                                     <ul id="menu-campus-life" class="gdlr-core-custom-menu-widget gdlr-core-menu-style-plain">
+
+
+
+                                        <li class="menu-item"><a href="http://www.cimaglobal.com" target="_blank">www.cimaglobal.com</a></li>
+                                        <li class="menu-item"><a href="http:/www.accaglobal.com" target="_blank">www.accaglobal.com</a></li>
                                         <li class="menu-item"><a href="http://www.ican.org.np/" target="_blank">The Institute of Chartered Accountants of Nepal</a></li>
                                         <li class="menu-item"><a href="http://www.icai.org/"  target="_blank">The Institute of Chartered Accountants of India</a></li>
                                         <li class="menu-item"><a href="http://www.ird.gov.np/" target="_blank">Inland Revenue Department of Nepal</a></li>
