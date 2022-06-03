@@ -12,6 +12,7 @@ class News_list extends Model
 
 
     protected $fillable = [
+        'news_category',
         'news_title',
         'news_content',
         'status',
