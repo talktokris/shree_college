@@ -20,7 +20,17 @@
 
                                 </ul>
                             </li>
-                            <li class="menu-item"><a href="{{ url('/news') }}">News</a></li>
+
+                            <li class="menu-item menu-item-has-children"><a href="#">News</a>
+                                <ul class="sub-menu">
+                                <li class="menu-item"><a href="{{ url('/news/general-notices') }}">General Notices</a></li>
+                                <li class="menu-item" ><a href="{{ url('/news/examination-notices') }}">Examination Notices</a></li>
+                                <li class="menu-item" ><a href="{{ url('/news/news-events') }}">News & Events</a></li>
+
+
+                                </ul>
+                            </li>
+
                             <li class="menu-item"><a href="{{ url('/gallery') }}">Gallery</a></li>
                             <li class="menu-item"><a href="{{ url('/faq') }}">FAQs</a></li>
 

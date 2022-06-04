@@ -29,7 +29,7 @@
                         <div class="kingster-breadcrumbs-container kingster-container">
                             <div class="kingster-breadcrumbs-item kingster-item-pdlr"> <span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Go to Kingster." href="index.php" class="home"><span property="name">Home</span></a>
                                 <meta property="position" content="1">
-                                </span>&gt;<span property="itemListElement" typeof="ListItem"><span property="name">NEWS</span>
+                                </span>&gt;<span property="itemListElement" typeof="ListItem"><span property="name">{{ $headTitle}}</span>
                                 <meta property="position" content="2">
                                 </span>
                             </div>
@@ -47,6 +47,10 @@
                                     <div class="gdlr-core-pbf-element">
                                         <div class="gdlr-core-blog-item gdlr-core-item-pdb clearfix  gdlr-core-style-blog-full-with-frame" >
                                             <div class="gdlr-core-blog-item-holder gdlr-core-js-2 clearfix" data-layout="fitrows">
+
+                                                @if(count($newsData)<1)
+                                                <p><h5 style="text-align: center;"> No news found</h5></p>
+                                                @endif
 
                                                 @foreach ($newsData as $item)
 
@@ -83,7 +87,7 @@
                             </div>
                             <div class="gdlr-core-pbf-sidebar-left gdlr-core-column-extend-left  kingster-sidebar-area gdlr-core-column-20 gdlr-core-pbf-sidebar-padding  gdlr-core-line-height" style="padding: 60px 30px 30px 0px;">
 
-                            @include('public/layouts/sidebarNews') ;
+                            @include('public/layouts/sidebarNewsCategory') ;
 
 
                         </div>

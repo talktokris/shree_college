@@ -19,4 +19,26 @@ class NewsPageController extends Controller
 
 
     }
+
+    public function newsCat($cat=null){
+
+
+
+        if($cat=='general-notices'){ $catStrig='General Notices'; $headTitle='General Notices';}
+        elseif($cat=='examination-notices'){ $catStrig='Examination Notices'; $headTitle='Examination Notices';}
+        elseif($cat=='news-events'){ $catStrig='News Events'; $headTitle='News & Events';}
+        else {$catStrig=''; $headTitle='News';}
+       // $catStrig=strval($catStrig);
+
+
+        $newsDataLimit= News_list::where([['news_category','=',"$catStrig"],['status','=',1]])->orderBy('updated_at', 'DESC')->limit(5)->get();
+
+        $newsData= News_list::where([['news_category','=',"$catStrig"],['status','=',1]])->orderBy('updated_at', 'DESC')->get();
+ //dd($newsData);
+        return view("public.newsPage")->with(compact("newsDataLimit"))->with("headTitle", $headTitle)->with(compact("newsData"));
+
+
+    }
+
+
 }

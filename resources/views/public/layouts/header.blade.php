@@ -31,7 +31,14 @@
 
                                         </ul>
                                     </li>
-                                    <li class="menu-item"><a href="{{ url('/news') }}" class="sf-with-ul-pre">News</a></li>
+
+                                    <li class="menu-item menu-item-has-children kingster-normal-menu"><a href="#" class="sf-with-ul-pre">News</a>
+                                        <ul class="sub-menu">
+                                            <li class="menu-item" data-size="60"><a href="{{ url('/news/general-notices') }}">General Notices</a></li>
+                                            <li class="menu-item" data-size="60"><a href="{{ url('/news/examination-notices') }}">Examination Notices</a></li>
+                                            <li class="menu-item" data-size="60"><a href="{{ url('/news/news-events') }}">News & Events</a></li>
+                                        </ul>
+                                    </li>
                                     <li class="menu-item"><a href="{{ url('/gallery') }}"  class="sf-with-ul-pre">Gallery</a></li>
                                     <li class="menu-item"><a href="{{ url('/faq') }}"  class="sf-with-ul-pre">FAQs</a></li>
                                     <li class="menu-item"><a href="{{ url('/inquiry') }}"  class="sf-with-ul-pre">Inquiry</a></li>

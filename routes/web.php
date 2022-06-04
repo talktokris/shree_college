@@ -44,6 +44,8 @@ Route::get('/shree-certification', [App\Http\Controllers\AboutPageController::cl
 Route::get('/cima', [App\Http\Controllers\CoursePageController::class, 'cima'])->name('cima');
 Route::get('/acca', [App\Http\Controllers\CoursePageController::class, 'acca'])->name('acca');
 Route::get('/news', [App\Http\Controllers\NewsPageController::class, 'news'])->name('news');
+
+Route::get('/news/{cat}', [App\Http\Controllers\NewsPageController::class, 'newsCat'])->name('news-category');
 Route::get('/gallery', [App\Http\Controllers\GalleryPageController::class, 'gallery'])->name('gallery');
 Route::get('/gallery/type/{hash_id}', [App\Http\Controllers\GalleryPageController::class, 'galleryType'])->name('gallery');
 

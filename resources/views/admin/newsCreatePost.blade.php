@@ -95,7 +95,7 @@
                                                     <?php  }  ?>
                                             <option value="General Notices">General Notices</option>
 											<option value="Examination Notices">Examination Notices</option>
-                                            <option value="News & Evants">News & Evants</option>
+                                            <option value="News Events">News Events</option>
 	                                        </select>
 
                                             @error('news_category')
