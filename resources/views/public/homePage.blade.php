@@ -133,7 +133,91 @@
                             </div>
                         </div>
                     </div>
-                    <div class="gdlr-core-pbf-wrapper "  id="gdlr-core-wrapper-2">
+                      <div class="gdlr-core-pbf-wrapper " id="div_1dd7_21">
+                        <div class="gdlr-core-pbf-background-wrap">
+                            <div class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js" id="div_1dd7_22" data-parallax-speed="0.2"></div>
+                        </div>
+                        <div class="gdlr-core-pbf-wrapper-content gdlr-core-js ">
+                            <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
+                                <div class="gdlr-core-pbf-column gdlr-core-column-20 gdlr-core-column-first">
+                                    <div class="gdlr-core-pbf-column-content-margin gdlr-core-js ">
+                                        <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js ">
+
+                                            <div class="gdlr-core-pbf-element">
+                                                <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-bottom gdlr-core-item-pdlr" id="div_1dd7_25">
+
+                            <div id="gdlr-core-recent-post-widget-1" class="widget widget_gdlr-core-recent-post-widget kingster-widget news-box">
+                                        <h5 class="kingster-widget-title" style="border-radius: 10px; text-align:center; padding-top:10px;">Recent News</h5><span class="clear"></span>
+                                        <div class="gdlr-core-recent-post-widget-wrap gdlr-core-style-1 news-area">
+                                            @foreach ($newsDataLimit as $row)
+
+                                            <?php $catType= $row->news_category;
+                                            if($catType=='Examination Notices'){$linkSting='/news/general-notices';}
+                                            elseif($catType=='General Notices'){$linkSting='/news/examination-notices';}
+                                            elseif($catType=='News Events'){$linkSting='/news/news-events';}
+
+                                            ?>
+
+
+                                            <div class="gdlr-core-recent-post-widget clearfix" style="border-top: 1px solid #ccc;">
+                                                <?php $imgName=$row->thumbnail_img; if($imgName==""){ $imageNewsString= url('assets/images/news/no-news.png'); }
+                                                else {  $imageNewsString= url('assets/images/news/'.$row->id.'/'.$row->thumbnail_img) ;}?>
+                                                <div class="gdlr-core-recent-post-widget-thumbnail gdlr-core-media-image"><img src="{{ $imageNewsString }}" alt="" width="150" height="150" title="shutterstock_1359486892" style="border-radius:5px; margin:15px;" /></div>
+                                                <div class="gdlr-core-recent-post-widget-content">
+                                                    <div class="gdlr-core-recent-post-widget-title"><a href="{{ url('/').$linkSting }}" style="color: #34B7F1;">{{ $row->news_title }}</a></div>
+                                                    <div class="gdlr-core-recent-post-widget-info"><span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date"><a href="#">{{ $row->created_at->diffForHumans(); }}</a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            @endforeach
+
+                                        </div>
+                                    </div>
+
+
+
+
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="gdlr-core-pbf-column gdlr-core-column-40">
+                                    <div class="gdlr-core-pbf-column-content-margin gdlr-core-js ">
+                                        <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js ">
+                                            <div class="gdlr-core-pbf-element">
+                                                <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" id="div_1dd7_26">
+                                                    <div class="gdlr-core-text-box-item-content" id="div_1dd7_27">
+                                                        <div class="gdlr-core-image-item-wrap gdlr-core-media-image  gdlr-core-image-item-style-rectangle" id="div_1dd7_24"><img src="{{ asset('assets/upload/footer-logo.png') }}" alt="" style="width: 150px; height:auto;" title="logo-white" /></div>
+                                                   <?php /* <div class="gdlr-core-title-item-title-wrap clearfix">
+                                                        <h3 class="gdlr-core-title-item-title gdlr-core-skin-title " id="h3_1dd7_5">About Shree Collage</h3>
+                                                    </div>
+                                                    */?>
+                                                        <p>Shree College of management is a dynamic, innovative and quality oriented educational institution offering the students a world class education by providing learning experience designed to develop intellectual abilities as well as social and ethical values. Shree College is located inside the city with well connectivity from all the directions.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="gdlr-core-pbf-element">
+                                                <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" id="div_1dd7_28">
+                                                    <div class="gdlr-core-text-box-item-content" id="div_1dd7_29">
+                                                        <p>Shree College is located inside the city with well connectivity from all the directions.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="gdlr-core-pbf-element">
+                                                <div class="gdlr-core-button-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align"><a class="gdlr-core-button  gdlr-core-button-transparent gdlr-core-button-no-border" href="{{ url('/about-shree')}}" id="gdlr-core-button-id-66813"><span class="gdlr-core-content" >Read More</span><i class="gdlr-core-pos-right fa fa-long-arrow-right" id="i_1dd7_0"  ></i></a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gdlr-core-pbf-wrapper "  id="gdlr-core-wrapper-2" style="padding-top:15px !important; padding-bottom:15px !important; ">
                         <div class="gdlr-core-pbf-background-wrap">
                             <div class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js" id="div_1dd7_13" data-parallax-speed="0.8"></div>
                         </div>
@@ -175,55 +259,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="gdlr-core-pbf-wrapper " id="div_1dd7_21">
-                        <div class="gdlr-core-pbf-background-wrap">
-                            <div class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js" id="div_1dd7_22" data-parallax-speed="0.2"></div>
-                        </div>
-                        <div class="gdlr-core-pbf-wrapper-content gdlr-core-js ">
-                            <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
-                                <div class="gdlr-core-pbf-column gdlr-core-column-20 gdlr-core-column-first">
-                                    <div class="gdlr-core-pbf-column-content-margin gdlr-core-js ">
-                                        <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js ">
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-image-item gdlr-core-item-pdlr gdlr-core-item-pdb  gdlr-core-left-align" id="div_1dd7_23">
-                                                    <div class="gdlr-core-image-item-wrap gdlr-core-media-image  gdlr-core-image-item-style-rectangle" id="div_1dd7_24"><img src="{{ asset('assets/upload/footer-logo.png') }}" alt="" style="width: 150px; height:auto;" title="logo-white" /></div>
-                                                </div>
-                                            </div>
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-bottom gdlr-core-item-pdlr" id="div_1dd7_25">
-                                                    <div class="gdlr-core-title-item-title-wrap clearfix">
-                                                        <h3 class="gdlr-core-title-item-title gdlr-core-skin-title " id="h3_1dd7_5">About </br>Shree Collage</h3></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="gdlr-core-pbf-column gdlr-core-column-40">
-                                    <div class="gdlr-core-pbf-column-content-margin gdlr-core-js ">
-                                        <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js ">
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" id="div_1dd7_26">
-                                                    <div class="gdlr-core-text-box-item-content" id="div_1dd7_27">
-                                                        <p>Shree College of management is a dynamic, innovative and quality oriented educational institution offering the students a world class education by providing learning experience designed to develop intellectual abilities as well as social and ethical values. Shree College is located inside the city with well connectivity from all the directions.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" id="div_1dd7_28">
-                                                    <div class="gdlr-core-text-box-item-content" id="div_1dd7_29">
-                                                        <p>Shree College is located inside the city with well connectivity from all the directions.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="gdlr-core-pbf-element">
-                                                <div class="gdlr-core-button-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align"><a class="gdlr-core-button  gdlr-core-button-transparent gdlr-core-button-no-border" href="{{ url('/about-shree')}}" id="gdlr-core-button-id-66813"><span class="gdlr-core-content" >Read More</span><i class="gdlr-core-pos-right fa fa-long-arrow-right" id="i_1dd7_0"  ></i></a></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                     <div class="gdlr-core-pbf-wrapper " id="div_1dd7_30" data-skin="Column Service">
                         <div class="gdlr-core-pbf-background-wrap" id="div_1dd7_31"></div>
                         <div class="gdlr-core-pbf-wrapper-content gdlr-core-js ">

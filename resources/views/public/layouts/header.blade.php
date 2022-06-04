@@ -9,9 +9,27 @@
                         <div class="kingster-navigation kingster-item-pdlr clearfix ">
                             <div class="kingster-main-menu" id="kingster-main-menu">
                                 <ul id="menu-main-navigation-1" class="sf-menu">
-                                <li class="menu-item current-menu-item"><a href="{{ url('/') }}"  class="sf-with-ul-pre">Home</a></li>
 
-                                    <li class="menu-item menu-item-has-children kingster-normal-menu"><a href="#" class="sf-with-ul-pre">Shree College</a>
+                                    <?php
+                              $CurrentRoute = Route::currentRouteName();
+                              // dd($CurrentRoute);
+
+                              if($CurrentRoute=="landing"){   $homePageActive='current-menu-item'; }else {$homePageActive='';}
+                              if(($CurrentRoute=="about-shree")||($CurrentRoute=="shree-team")||($CurrentRoute=="shree-certification")){   $aboutPageActive='current-menu-item'; }else {$aboutPageActive='';}
+                              if(($CurrentRoute=="cima")||($CurrentRoute=="acca")){   $coursePageActive='current-menu-item'; }else {$coursePageActive='';}
+                              if($CurrentRoute=="news-category"){   $newsPageActive='current-menu-item'; }else {$newsPageActive='';}
+                              if($CurrentRoute=="gallery"){   $galleryPageActive='current-menu-item'; }else {$galleryPageActive='';}
+                              if($CurrentRoute=="faq"){   $faqPageActive='current-menu-item'; }else {$faqPageActive='';}
+                              if($CurrentRoute=="inquiry"){   $inquiryPageActive='current-menu-item'; }else {$inquiryPageActive='';}
+                              if($CurrentRoute=="contact"){   $contactPageActive='current-menu-item'; }else {$contactPageActive='';}
+
+
+
+
+                                    ?>
+                                <li class="menu-item <?php echo $homePageActive;?>"><a href="{{ url('/') }}"  class="sf-with-ul-pre">Home</a></li>
+
+                                    <li class="menu-item <?php echo $aboutPageActive;?> menu-item-has-children kingster-normal-menu"><a href="#" class="sf-with-ul-pre">Shree College</a>
                                         <ul class="sub-menu">
                                             <li class="menu-item" data-size="60"><a href="{{ url('/about-shree') }}">About Shree College</a></li>
 
@@ -23,7 +41,7 @@
 
 
 
-                                    <li class="menu-item menu-item-has-children kingster-normal-menu"><a href="#" class="sf-with-ul-pre">Courses</a>
+                                    <li class="menu-item <?php echo $coursePageActive;?> menu-item-has-children kingster-normal-menu"><a href="#" class="sf-with-ul-pre">Courses</a>
                                         <ul class="sub-menu">
                                             <li class="menu-item" data-size="60"><a href="{{ url('/cima') }}"><img src="{{ asset('assets/images/menu-icon-cima.png') }}" class="menu-icon-img">CIMA - Chartered Institute Of Management Accountants</a></li>
                                             <li class="menu-item" data-size="60"><a href="{{ url('/acca') }}"><img src="{{ asset('assets/images/menu-icon-acca.png') }}" class="menu-icon-img">ACCA -The Association of Chartered Certified Accountants</a></li>
@@ -32,17 +50,17 @@
                                         </ul>
                                     </li>
 
-                                    <li class="menu-item menu-item-has-children kingster-normal-menu"><a href="#" class="sf-with-ul-pre">News</a>
+                                    <li class="menu-item <?php echo $newsPageActive;?> menu-item-has-children kingster-normal-menu"><a href="#" class="sf-with-ul-pre">News</a>
                                         <ul class="sub-menu">
                                             <li class="menu-item" data-size="60"><a href="{{ url('/news/general-notices') }}">General Notices</a></li>
                                             <li class="menu-item" data-size="60"><a href="{{ url('/news/examination-notices') }}">Examination Notices</a></li>
                                             <li class="menu-item" data-size="60"><a href="{{ url('/news/news-events') }}">News & Events</a></li>
                                         </ul>
                                     </li>
-                                    <li class="menu-item"><a href="{{ url('/gallery') }}"  class="sf-with-ul-pre">Gallery</a></li>
-                                    <li class="menu-item"><a href="{{ url('/faq') }}"  class="sf-with-ul-pre">FAQs</a></li>
-                                    <li class="menu-item"><a href="{{ url('/inquiry') }}"  class="sf-with-ul-pre">Inquiry</a></li>
-                                    <li class="menu-item"><a href="{{ url('/contact') }}"  class="sf-with-ul-pre">Contact</a></li>
+                                    <li class="menu-item <?php echo $galleryPageActive;?> "><a href="{{ url('/gallery') }}"  class="sf-with-ul-pre">Gallery</a></li>
+                                    <li class="menu-item <?php echo $faqPageActive;?> "><a href="{{ url('/faq') }}"  class="sf-with-ul-pre">FAQs</a></li>
+                                    <li class="menu-item <?php echo $inquiryPageActive;?> "><a href="{{ url('/inquiry') }}"  class="sf-with-ul-pre">Inquiry</a></li>
+                                    <li class="menu-item <?php echo $contactPageActive;?> "><a href="{{ url('/contact') }}"  class="sf-with-ul-pre">Contact</a></li>
 
 
                                 </ul>
