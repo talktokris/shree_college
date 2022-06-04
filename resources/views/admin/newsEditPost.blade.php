@@ -86,24 +86,65 @@
                                                 @enderror
                                             </div>
 
+                                            <div class="mb-3">
+                                                <label for="validationTextarea" class="form-label">E-magazine category : </label>
+                                                <select name="news_category" class="form-select" id="validationCustom04" required="">
+
+                                                <option value="<?php echo $item->news_category ?? old('news_category'); ?>"><?php echo $item->news_category ?? old('news_category'); ?></option>
+
+                                                <option value="General Notices">General Notices</option>
+                                                <option value="Examination Notices">Examination Notices</option>
+                                                <option value="News & Evants">News & Evants</option>
+                                                </select>
+
+                                                @error('news_category')
+                                                    <div class="invalid-feedback">
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
+                                            </div>
+
+
+                                            <div class="mb-3">
+                                                <label for="validationTextarea" class="form-label">Home Page Status : </label>
+                                                <select name="home_page_status" class="form-select" id="validationCustom04" required="">
+                                                        <?php
+                                                            if($item->home_page_status==0){ $status_string='Not Show'; $statusValue = $item->home_page_status;}
+                                                            elseif($item->home_page_status==1){ $status_string='Show';  $statusValue = $item->home_page_status;}
+                                                            elseif(old('home_page_status')==0){ $status_string='Not Show'; $statusValue = old('home_page_status'); }
+                                                            elseif(old('home_page_status')==1){ $status_string='Show'; $statusValue = old('home_page_status');}
+                                                            else { $status_string=''; $statusValue = old('home_page_status');}
+
+                                                            ?>
+                                                <option value="<?php echo $statusValue ; ?>"><?php echo $status_string ?></option>
+                                                <option value="0">Not Show</option>
+                                                <option value="1">Show</option>
+
+
+                                                </select>
+                                                @error('home_page_status')
+                                                    <div class="invalid-feedback">
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
+                                            </div>
+
 
 
                                             <div class="mb-3">
                                                 <label for="validationTextarea" class="form-label">Post Status : </label>
                                                 <select name="status" class="form-select" id="validationCustom04" required="">
-                                                   <?php
+                                                    <?php
                                                         if($item->status==0){ $status_string='Draft'; $statusValue = $item->status;}
                                                         elseif($item->status==1){ $status_string='Publish';  $statusValue = $item->status;}
                                                         elseif(old('status')==0){ $status_string='Draft'; $statusValue = old('status'); }
                                                         elseif(old('status')==1){ $status_string='Publish'; $statusValue = old('status');}
                                                         else { $status_string=''; $statusValue = old('status');}
 
-
-
                                                         ?>
-                                                     <option value="<?php echo old('status') ?>"><?php echo $status_string ?></option>
-                                                     <option value="0">Draft</option>
-                                                     <option value="1">Publish</option>
+                                                        <option value="<?php echo $statusValue; ?>"><?php echo $status_string ?></option>
+                                                        <option value="0">Draft</option>
+                                                        <option value="1">Publish</option>
 
 
                                                     </select>
@@ -112,7 +153,7 @@
                                                         {{ $message }}
                                                     </div>
                                                     @enderror
-                                                </div>
+                                            </div>
 
 
 

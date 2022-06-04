@@ -26,8 +26,10 @@ class AdminNewsController extends Controller
 	//id 	news_title 	news_content 	status
 
         $validatedData = $request->validate([
+            'news_category' => 'required|string|min:5|max:150',
             'news_title' => 'required|string|min:10|max:150',
             'news_content' => 'required|string|min:20|max:1000',
+            'home_page_status' => 'required|integer|between:0,10',
             'status' => 'required|integer|between:0,10'
             ]);
 
@@ -42,6 +44,8 @@ class AdminNewsController extends Controller
 
             $data= $request->all();
             $newsSave = new News_list;
+            $newsSave->news_category= $data['news_category'];
+            $newsSave->home_page_status= $data['home_page_status'];
             $newsSave->news_title= $data['news_title'];
             $newsSave->news_content= $data['news_content'];
             $newsSave->status= $data['status'];
@@ -123,13 +127,12 @@ class AdminNewsController extends Controller
               //  dd($request);
 
               $validatedData = $request->validate([
+                'news_category' => 'required|string|min:5|max:150',
                 'news_title' => 'required|string|min:10|max:150',
                 'news_content' => 'required|string|min:20|max:1000',
+                'home_page_status' => 'required|integer|between:0,10',
                 'status' => 'required|integer|between:0,10'
                 ]);
-
-
-
 
                 $data = $request->all();
 
@@ -144,7 +147,7 @@ class AdminNewsController extends Controller
 
 
 
-                         $newsEditSave = News_list::where("id", $id)->update(["news_title" => $data['news_title'],"news_content" => $data['news_content'],"status" => $data['status']]);
+                         $newsEditSave = News_list::where("id", $id)->update(["news_category" => $data['news_category'],"home_page_status" => $data['home_page_status'],"news_title" => $data['news_title'],"news_content" => $data['news_content'],"status" => $data['status']]);
 
 
                        //  $newsEditSave->save()->where("id", $id);

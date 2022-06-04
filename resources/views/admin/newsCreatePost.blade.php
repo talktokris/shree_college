@@ -85,6 +85,48 @@
                                              @enderror
 										</div>
 
+                                        <div class="mb-3">
+											<label for="validationTextarea" class="form-label">E-magazine category : </label>
+                                            <select name="news_category" class="form-select" id="validationCustom04" required="">
+                                                <?php if(old('news_category')){
+                                                   $status_string = old('news_category');
+                                                    ?>
+                                                     <option value="<?php echo old('news_category') ?>"><?php echo $status_string ?></option>
+                                                    <?php  }  ?>
+                                            <option value="General Notices">General Notices</option>
+											<option value="Examination Notices">Examination Notices</option>
+                                            <option value="News & Evants">News & Evants</option>
+	                                        </select>
+
+                                            @error('news_category')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                             @enderror
+										</div>
+
+
+	                                    <div class="mb-3">
+											<label for="validationTextarea" class="form-label">Home Page Status : </label>
+                                            <select name="home_page_status" class="form-select" id="validationCustom04" required="">
+                                                <?php if(old('home_page_status')){
+                                                    if(old('status')==0){ $status_string='Not Show';}
+                                                    elseif(old('status')==1){ $status_string='Show';}
+                                                    else { $status_string='';}
+                                                    ?>
+                                                     <option value="<?php echo old('home_page_status') ?>"><?php echo $status_string ?></option>
+                                                    <?php  }  ?>
+                                            <option value="0">Not Show</option>
+											<option value="1">Show</option>
+
+
+											</select>
+                                            @error('home_page_status')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                             @enderror
+										</div>
 
 
 										<div class="mb-3">

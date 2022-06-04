@@ -78,14 +78,24 @@
                                 <?php $imageFindName=$item->thumbnail_img;
                                 if($imageFindName==""){   $news_image= url('assets/images/news/no-news.png'); }
                                 else {   $news_image= url('assets/images/news').'/'.$item->id.'/'.$item->thumbnail_img; } ?>
+
+                                <?php  $homeStatus=$item->home_page_status;
+                                        if($homeStatus==1){ $homeSting='<span class="badge bg-success">Show</span>';}
+                                        elseif($homeStatus==0){ $homeSting='<span class="badge bg-secondary">Not Show</span>';}
+
+                                         $statusValue=$item->status;
+                                        if($statusValue==1){ $statusSting='<span class="badge bg-success">Active</span>';}
+                                        elseif($statusValue==0){ $statusSting='<span class="badge bg-secondary">Draft</span>';}?>
                                 <tr>
                                     <td style="text-align: center;"><img src="<?php echo $news_image ;?>"  style="width: 200px;" ></br>
                                     <a href="{{ url('/admin/news-image-upload')}}/{{ base64_encode($item->id) }}" class="btn btn-warning" style="margin: 1em;">Change Image</a></td>
                                     <td style="word-break:break-all;"><h5 style="overflow-wrap: break-word;  white-space:nowrap;">{{ $item->news_title}}</h5>
                                        <p style="overflow-wrap: break-word;  white-space:normal;"> <?php echo $item->news_content ;?></p></td>
-                                    <td><strong> Created User:</strong> {{ $item->posted_user_email }}</br>
-                                        <strong> Created Date:</strong> {{ $item->created_at->diffForHumans()  }}</br>
-                                        <strong> Updated Date:</strong>{{ $item->updated_at->diffForHumans()   }}</td>
+                                    <td><strong> E-magazine category :</strong> {{ $item->news_category }}</br>
+                                        <strong> Home Page  Status :</strong> <?php echo $homeSting ;?></br>
+                                        <strong> Active Status :</strong> <?php echo  $statusSting ;?> </br>
+                                        <strong> Created Date :</strong> {{ $item->created_at->diffForHumans()  }}</br>
+                                        <strong> Updated Date :</strong> {{ $item->updated_at->diffForHumans()  }}</br></td>
                                     <td><a href="<?php echo url('/admin/news/edit/').'/'. base64_encode($item->id) ;?>" class="btn btn-warning"><i class="bx bx-pencil"></i></a></td>
                                     <td><a href="<?php echo url('/admin/news/delete/').'/'. base64_encode($item->id) ;?>" class="btn btn-danger"><i class="bx bx-trash"></i></a></td>
                                 </tr>
